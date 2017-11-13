@@ -1,0 +1,16 @@
+\\10.0.0.55\kktv\design\APP\KKTV\5.6.6\实体抓娃娃
+
+1.TeamViewe12.zip,运行rClientID.exe启动teamviewer
+
+2.使用teamviewer，远程连接至娃娃机电脑上。所有的娃娃机TeamViewer编号请见"娃娃机电脑.txt",密码是统一是azusa2017
+
+3.把KKCraneMachine_1.0.0.xx.exe copy到远程电脑上，如果远程电脑上的安装文件已经是最新版本，则跳过此步
+
+4.安装完成后，将VideoConfig.ini文件  copy到C:\KKCraneMachine\bin； 
+VideoConfig.ini文件里修改ServerIP="http://betaapi.kktv8.com:9090/"可以切换API服务器，目前是beta服；切换至正式服后，请改成正式服域名；修改文件要在直播精灵关闭情况下进行才会生效
+
+5.启动直播精灵，点击start, 可对主摄像头进行推流；重复上述操作可以开启次摄像头推流
+
+6.完成上述操作后，过15秒左右刷新列表就可以在大厅里看到这个房间
+
+7.查看直播精灵日志路径: C:/Users/zz/AppData/Roaming/KKLive/KKCraneMachine

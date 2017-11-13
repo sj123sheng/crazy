@@ -1,0 +1,50 @@
+mvn -U clear install -Dmaven.test.skip=true
+mvn -U clean install -DskipTests
+
+cd /Users/shengjian/Documents/小菜宝/BHBDoctorGenerator/libs
+java -jar mybatis-generator-core-1.3.1.jar -configfile ../src/generatorConfig.xml -overwrite
+
+您的 Apple ID (531522023@qq.com) 
+密码：Sj123shengjian
+
+对面隔壁Apple ID (shengjian@songxiaocai.com) 
+密码：Abcd1001
+
+qq密码： SJ123SHENGJIAN
+
+天津立达人才中心地址：万科世贸广场B座1601 白老师
+
+珠海公积金账号 001230867 卡号 6217003090011816891 密码 955330  只有卡号登进去才能看到提取的信息
+
+杭州公积金个人客户号 042000723645
+
+江西省挂号预约账号 shengjian123
+
+当地公积金管理中心调用函加本人身份证复印件
+
+任喜电话： 13911305466  微信号：renxi001
+
+房贷：工商银行杭州开元支行 吴国英 电话：13588088919
+
+mysql -u sxc -p  123456  连接本机mysql
+mysql -h主机地址 -u root -p 123456  连接远程mys
+
+oh-my-zsh的安装
+  yum install zsh -y
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+如果重装 需要先rm -rf 删除zsh和oh-my-zsh文件夹
+
+瑷颐湾无线路由器管理员密码： 697586
+安卓切换灰度和正式服 在搜索输入：kk-sandbox 在点击搜索图标
+
+QQ账号: 395205950  密码: ZXIAOW66jie
+QQVIP账号: 84786536 密码: zhang@1995
+
+房间cdn缓存刷新: 
+  测试服:  http://10.0.3.24:82/CDN/refresh/?I=20010302
+  beta服:  http://10.0.13.22/CDN/refresh/?I=20010302
+
+大厅栏目(栏目id：3739)下的房间列表:
+  测试服:  http://10.0.3.24:82/CDN/output/M/1/I/20010302/P/a-1_c-108_cataId-3739_start-0_offset-40_platform-2_v-106/json.js
+  beta服:  http://10.0.13.22/CDN/output/M/1/I/20010302/P/a-1_c-108_cataId-3739_start-0_offset-40_platform-2_v-106/json.js

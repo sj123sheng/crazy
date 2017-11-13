@@ -1,0 +1,213 @@
+用户消息相关代码熟悉、了解
+三个redis key : 
+	String.format("%d_%d", userId, typeMsg)
+	String.format("%d_msgsort", userId) 7539862_3
+	msgTotalCount
+Message.java 消息枚举
+
+10006101	MessageBoxFunctions.getUserMessageList	获取用户消息列表（旧版）
+10006102	MessageBoxFunctions.refreshToGetMsgTotal	客户端定时刷新获取用户消息总数（旧版）
+10006103	MessageBoxFunctions.deleteMsg	删除消息（旧版）
+10006104	MessageBoxFunctions.fetchMessage	遍历某种消息（旧版）
+10006105	MessageBoxFunctions.getMessageSwitchSet	获取消息推送开关设置 （旧版）
+10006106	MessageBoxFunctions.setMessageSwitch	设置消息推送开关（旧版）
+
+新版消息
+接口标志	接口名称	接口描述
+50006101	MessageBoxV2Functions.getUserMessageList	获取用户消息列表
+50006102	MessageBoxV2Functions.refreshToGetMsgTotal	客户端定时刷新获取用户消息总数
+50006103	MessageBoxV2Functions.getUserLastReadTime	获取用户上次遍历消息时间
+50006104	MessageBoxV2Functions.fetchMessage	遍历消息
+50006105	MessageBoxV2Functions.markAllMessagesRead	标记所有消息已读
+50006106	MessageBoxV2Functions.getRecommendedMsgHtml	获取新鲜播报富文本内容
+
+接口逻辑：
+获取用户消息列表(10006101)：
+  从"<userId>_msgsort"中按时间从小到大(zrange)分页得到类别数目count，value,根据value取出每个类别中的最新一条的消息详情返回。
+客户端定时刷新用户消息总数(10006102)
+  小程序只generate msgType=1/2/3/4，5/6的generate放在了这里(最小间隔时间1天),generate之后读redis "msgTotalCount"；
+删除消息，包括单一删除和全部删除(10006103)
+  删除房间消息。根据房间号单一删除或者删除该用户的全部房间消息。
+遍历消息(10006104)            
+  好像只返回23456的遍历消息[?],上次读时间（lrtFromClient）从客户端传入，无则从redis（effLastTime(read)）读出.如果不传startTime且页码为第一页，删除当前类消息（即标
+记该类别消息为已读）。然后从oracle查出返回.(lastReadTIme 到 generateTime（这里包括5，6也是以1234的generate的time做generatetime,不影响）)
+
+消息小程序:MessageGenerator
+  定时从oracle刷出不同类别的消息（1-房间消息、3-动态消息、4-系统消息、9-赞消息）,更新到redis。
+
+小程序相关sql整理：
+SELECT
+  activityid,
+  message,
+  dtime,
+  startdate
+FROM Activity_Info
+WHERE --startdate < to_date(#timeCurrent#, 'yyyy-mm-dd hh24:mi:ss')
+  --AND enddate > to_date(#timeCurrent#, 'yyyy-mm-dd hh24:mi:ss')
+  ispushmessage = 1
+ORDER BY dtime DESC;
+
+SELECT
+  refid2,
+  describe,
+  title,
+  time
+FROM systemmessage
+WHERE type = 6 --AND time >= to_date(i_queryTime, 'yyyy-mm-dd hh24:mi:ss')
+--AND time < to_date(i_queryEndTime, 'yyyy-mm-dd hh24:mi:ss')
+ORDER BY time DESC;
+SELECT
+  --SEQ_SYSTEMMESSAGE_ID.nextval,
+  6,
+  userid,
+  dtime,
+  describe,
+  title
+FROM NOTICE_SPECIAL_USERLIST;
+
+SELECT
+  msgid,
+  content,
+  starttime
+FROM (
+  SELECT
+    msgid,
+    content,
+    starttime
+  FROM conf_recommended_msgs
+   -- where STARTTIME is not NULL
+  --WHERE starttime < to_date(#timeCurrent#, 'yyyy-mm-dd hh24:mi:ss')
+ORDER BY starttime DESC
+) WHERE ROWNUM <= 1;
+
+CALL p_getSysDelDyanmicMsgList();
+
+SELECT
+  title,
+  describe,
+  userid,
+  update_time
+FROM background_reward
+--      where  update_time>=to_date(#queryTime#,'yyyy-mm-dd hh24:mi:ss')
+--and<![CDATA[ update_time<to_date(#queryEndTime#,'yyyy-mm-dd hh24:mi:ss')]]>
+ORDER BY update_time ASC;
+
+SELECT
+  --SEQ_SYSTEMMESSAGE_ID.nextval,
+  4,
+  ucid,
+  userid,
+  endtime - 3,
+  '您的' || name || '将于3天后过期，请及时续费。',
+  '道具过期提醒'
+FROM user_car
+  RIGHT JOIN car_info ON user_car.carid = car_info.carid;
+
+SELECT
+  --SEQ_SYSTEMMESSAGE_ID.nextval,
+  4,
+  medal_id,
+  userid,
+  endtime - 3,
+  '您的家族勋章将于3天后过期，请及时续费。',
+  '勋章过期提醒'
+FROM user_medal;
+
+SELECT
+  4,
+  propid,
+  userid,
+  endtime - 3,
+  '您的' || decode(propid, 100001, 'VIP', 100004, 'SVIP') || '将于3天后过期，请及时续费。',
+  '道具过期提醒'
+FROM user_prop
+WHERE --endtime>=to_date(#queryTime#,'yyyy-mm-dd hh24:mi:ss') + 3
+  --and <![CDATA[endtime<to_date(#queryEndTime#,'yyyy-mm-dd hh24:mi:ss') + 3]]>
+  propid IN (100001, 100004);
+
+SELECT
+  --SEQ_SYSTEMMESSAGE_ID.nextval,
+  2,
+  histid,
+  userid,
+  presenttime,
+  '恭喜您' || presentdisctibe || '。',
+  '邀请奖励'
+FROM official_present_history
+-- presenttime >= to_date(#queryTime#, 'yyyy-mm-dd hh24:mi:ss')
+--AND presenttime<to_date(#queryEndTime#, 'yyyy-mm-dd hh24:mi:ss')
+WHERE presenttype >= 101 AND presenttype <= 104;
+
+SELECT
+  --SEQ_SYSTEMMESSAGE_ID.nextval,
+  1,
+  br.id,
+  br.userid,
+  br.update_time,
+  '恭喜您在“' || br.title || '”中，获得' || describe || '。',
+  '活动奖励'
+FROM background_reward br;
+
+SELECT
+  hcp.hist_id,
+  hcp.user_id,
+  hcp.comment_id,
+  hcp.dtime,
+  rnc.user_id,
+  rni.user_id
+FROM kkcx.hist_comment_praise hcp
+  LEFT JOIN kkcx.res_news_comment rnc ON hcp.comment_id = rnc.comment_id
+  LEFT JOIN kkcx.res_news_info rni ON rnc.news_id = rni.news_id
+--WHERE hcp.dtime >= to_timestamp(i_querytime, 'yyyy-mm-dd hh24:mi:ss')
+--      AND hcp.dtime < to_timestamp(i_queryendtime, 'yyyy-mm-dd hh24:mi:ss')
+ORDER BY hcp.dtime ASC;
+
+SELECT
+  rnc.comment_id,
+  rnc.news_id,
+  rnc.user_id,
+  rnc.content,
+  rnc.comment_time,
+  rni.user_id,
+  rnc.to_userid
+FROM kkcx.res_news_comment rnc LEFT JOIN kkcx.res_news_info rni ON rnc.news_id = rni.news_id
+--WHERE rnc.comment_time >= to_timestamp('2018', 'yyyy-mm-dd hh24:mi:ss')
+--    AND rnc.comment_time < to_timestamp(i_queryEndTime, 'yyyy-mm-dd hh24:mi:ss')
+ORDER BY rnc.comment_time ASC;
+
+/**
+ * 房间消息
+ */
+public static final int MSGTYPE_ROOM 			= 1;
+/**
+ * KK小秘书
+ */
+public static final int MSGTYPE_KKASSISTANT 	= 2;
+/**
+ * 动态消息
+ */
+public static final int MSGTYPE_DYNAMIC 		= 3;
+/**
+ * 系统消息
+ */
+public static final int MSGTYPE_SYSTEM 			= 4;
+/**
+ * 活动消息
+ */
+public static final int MSGTYPE_ACTIVE 			= 5;
+/**
+ * 新鲜播报消息
+ */
+public static final int MSGTYPE_RECOMMENDED		= 6;
+/**
+ * 默认密码消息
+ */
+public static final int MSGTYPE_DEFPWD			= 7;
+/**
+ * 消息类型最大数值
+ */
+public static final int MSGTYPE_LAST			= 8;
+/**
+ * 点赞消息
+ */
+public static final int MSGTYPE_PRAISE			= 9;

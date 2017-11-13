@@ -1,0 +1,71 @@
+
+涉及工程:
+  API: meShow 
+    10004020  AlbumFunctions.deleteUserPosterV2 删除用户海报V2
+    10004021  AlbumFunctions.insertToDBNewV2  海报信息存入数据库V2
+    10004022  AlbumFunctions.insertToDBV2 图片信息存入数据库V2
+    10004023  AlbumFunctions.deletePhotoV2  删除照片V2
+  模块: poster-module-server opus-module kk-resource-module
+  小程序: resourceStatusRefreshBoot
+
+disconf:
+  meShow: 
+    config.properties: 
+      httpdir=https://kkimg.kktv9.com
+    config.xml: 
+      <httpdir>https://kkimg.kktv9.com</httpdir>
+      <mediahttpdir>https://kkabroad.kktv9.com</mediahttpdir>
+      <!-- 七牛 -->
+      <videoURL>https://kkabroad.kktv9.com/</videoURL>
+
+数据库:
+  新增存储过程: p_addPicture_v3.sql
+  将资源表和资源临时表序列初始化值: 设置为1亿 为了不跟自增长的主键冲突插入
+    资源表: alter sequence seq_resource restart with 100000000;
+    资源临时表: alter sequence resource_temp_res_id_seq restart with 100000000;
+
+S3服务器: 上传默认的未审核图片 S3上已经上传
+  文件名: 
+    头像审核中图片: /portrait/offical/checkingportrait.jpg  
+    海报审核中图片: /picture/offical/checkingpicture.jpg
+
+安卓: 李博
+IOS: 姚凯
+海外版账号: 151000001
+密码: a123456
+
+图片分辨率:
+  常用分辨率: 48、128、256、1280
+  不常用分辨率: 128x96、272、270、222、174、160
+
+接入资源模块的类型:
+  一期: 海报、头像、相册
+  二期: 动态
+
+MQ topic申请创建: checkResourceHistoryTopic
+
+资源类型resType枚举-ResTypeEnum:
+public class ResTypeEnum {
+
+  /** 头像 */
+  public static final int portrait = 0;
+  /** 海报图片 */
+  public static final int poster = 1;
+  /** 相册图片 */
+  public static final int picture = 2;
+  /** 动态图片 */
+  public static final int resource = 3;
+  /** 背景图 */
+  public static final int background = 4;
+  /** 家族海报 */
+  public static final int family_poster = 5;
+  /** 群聊 */
+  public static final int imchat = 6;
+  /** 举报 */
+  public static final int report = 7;
+  /** 申请公开直播 */
+  public static final int apply = 8;
+  /** 录屏分享视频 */
+  public static final int video_tape = 9;
+
+}

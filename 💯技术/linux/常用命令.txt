@@ -1,0 +1,98 @@
+control+R 输入关键字查找最近输入的命令
+
+sudo jmap -histo 4704 > jmap.txt
+频繁gc的时候，使用这个命令查看进程内存情况，如果连续查看3次发现某个com.sxc的对象大量留存在内存中，很有可能就是这个对象造成的内存泄漏。 4704为进程id（pid）
+
+/home/git/.ssh   vim authorized_keys  gitlab所在服务器上ssh_key添加
+
+cat > catalina.out  清空catalina.out 日志
+
+grep catalina.out -e "20160729"    查找文件中包含的字符串 
+
+cat -n  catalina.out |grep "地形"  得到关键日志的行号 
+cat -n  catalina.out |tail -n +561500|head -n 20 
+tail -n +92表示查询92行之后的日志
+head -n 20 则表示在前面的查询结果里再查前20条记录
+charge充值模块的日志地址： /usr/local/chargeServer/apache-tomcat-7.0.65/bin/charge.loggingRoot_IS_UNDEFINED
+
+Linux文件夹拷贝
+cp -r /home/admin/sxc/bak/ironman.20160725-141231/   /home/wwwroot/erp.songxiaocai.com/
+Linux对文件夹重命令
+ mv ironman.20160725-141231 ironman
+ironman.20160725-141231是原名，ironman是想要改的名字
+
+1、*.rpm形式的二进制软件包 
+安装：rpm -ivh *.rpm 
+卸载：rpm -e packgename 
+
+2、*.tar.gz/*.tgz、*.bz2形式的二进制软件包 
+安装：tar zxvf *.tar.gz 或 tar yxvf *.bz2 
+卸载：手动删除  rm -rf
+
+新接手了几台linux的服务器,第一步当然是要了解这些服务器的软硬件配置.现在就写出我这次用的一些命令.
+ 
+首先当然要取得机器的IP,用户名和密码(呵呵,不知道就找原来的管理员要哈)
+ 
+登陆之后,首先看到的就是机器的名称,一般提示符就有了,如
+[root@localhost root]#
+这其中的localhost就是机器名了.如果用命令来查看的话就是hostname
+ 
+查看系统内核
+uname –a
+ 
+查看操作系统的版本(我现在只用过redhat,所以只以这个为例)
+cat /etc/redhat-release
+ 
+查看当前打开的服务
+chkconfig –list
+ 
+查看当前打开的端口
+netstat –an
+ 
+查看磁盘信息
+fdisk -l
+df -h
+ 
+查看cpu的信息
+cat /proc/cpuinfo
+ 
+查看内存信息
+cat /proc/meminfo
+ 
+查看板卡信息
+lspci
+cat /proc/pci
+ 
+查看当前系统运行情况
+top (类似于windows的任务管理器,可以看到当前cpu,内存的使用情况)
+ 
+查看安装的一些服务软件
+一般都安装在/usr/local/下,所以到这个下面去查看相关的文件夹即可
+对于软件来讲,首先要看的就是它的版本,所以我列出几个常用软件查看版本的命令
+MySQL:在安装的bin目录下执行 ./mysql –V    (注意这个V是大写)
+Apache:在安装的bin目录下执行./apachectl -v
+其实没必要专门去bin目录下，因为全局环境变量中已包含bin目录，可直接运行命令，如下所示：
+ 
+使用date命令即可设置系统时间。
+1  、查看系统时间
+date                                         
+2、设置当前系统时间为2015年5月8日19点48分0秒
+date  -s "2015-5-8 19:48:00"
+
+du查看目录大小，df查看磁盘使用情况。
+我常使用的命令（必要时，sudo使用root权限），
+1.查看某个目录的大小：du -hs /home/master/documents   du -hs /home/*
+  查看目录下所有目录的大小并按大小降序排列：sudo du -sm /etc/* | sort -nr | less
+2.查看磁盘使用情况（文件系统的使用情况）：sudo df -h
+  df --block-size=GB
+
+-h是使输出结果更易于人类阅读；du -s只展示目录的使用总量（不分别展示各个子目录情况），-m是以MB为单位展示目录的大小（当然-k/-g就是KB/GB了）。
+更多信息，还是man du 和 man df 来获得吧
+
+本文介绍linux如何查看端口被哪个进程占用的方法：
+
+1、lsof -i:端口号
+
+2、netstat -tunlp|grep 端口号
+
+都可以查看指定端口被哪个进程占用的情况

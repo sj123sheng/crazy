@@ -1,0 +1,127 @@
+springboot.pngspring-boot spring-cloud swagger
+
+如何在IDEA启动多个Spring Boot工程实例
+版权声明：本文为博主原创文章，欢迎转载，转载请注明作者、原文超链接 ，博主地址：http://blog.csdn.net/forezp。
+
+在我讲解的案例中，经常一个工程启动多个实例，分别占用不同的端口，有很多读者百思不得其解，在博客上留言，给我发邮件，加我微信询问。所以有必要在博客上记录下，方便读者。
+首先要把pom里面配置的支持热加载的模块注释掉，否则启动新实例会重启老的实例加载出最新的端口，导致端口号冲突
+<!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>-->
+step 1
+在IDEA上点击Application右边的下三角 ,弹出选项后，点击Edit Configuration
+
+step 2
+打开配置后，将默认的Single instance only(单实例)的钩去掉。 
+
+step 3
+通过修改application文件的server.port的端口，启动。多个实例，需要多个端口，分别启动。
+
+package com.sxc.jotunheim.stockclient;
+
+import com.sxc.jotunheim.stockclient.dto.stock.StockInDTO;
+import com.sxc.jotunheim.stockclient.dto.stock.StockOutDTO;
+import feign.Headers;
+import feign.Param;
+import feign.RequestLine;
+
+/**
+ * PackageName: com.sxc.jotunheim.stockclient
+ * FileName: StockClient.java
+ * Description: TODO
+ * Copyright: Copyright (c)2017
+ * Company: songxiaocai
+ *
+ * @author wangzhang kylo.zw@gmail.com
+ * @version 1.0, 2017/4/18
+ */
+public interface StockClient {
+
+    /**
+     * 入库
+     *
+     * @see StockInDTO
+     * @return
+     */
+    @RequestLine("POST /stocks/")
+    @Headers("Content-Type: application/json")
+    public String stockIn(StockInDTO stockInDTO);
+
+    /**
+     * 出库
+     *
+     * @see StockOutDTO
+     * @return
+     */
+    @RequestLine("PUT /stocks/")
+    @Headers("Content-Type: application/json")
+    public String stockOut(StockOutDTO stockOutDTO);
+
+    /**
+     * 查询库存列表
+     * @param storehouseId 仓库 id
+     * @param types 库存类型 2:中心仓库存；3:小仓实际库存；4:小仓退货库存
+     * @return
+     */
+    @RequestLine("GET /stocks/?storehouseId={storehouseId}&types={types}")
+    public String getStocks(@Param("storehouseId") Integer storehouseId,
+                            @Param("types") String types);
+
+    /**
+     * 查询库存列表
+     * @param storehouseId 仓库 id
+     * @param types 库存类型 2:中心仓库存；3:小仓实际库存；4:小仓退货库存
+     * @param updateTimeS 开始修改时间
+     * @return
+     */
+    @RequestLine("GET /stocks/?storehouseId={storehouseId}&types={types}&updateTimeS={updateTimeS}")
+    public String getStocks(@Param("storehouseId") Integer storehouseId,
+                            @Param("types") String types,
+                            @Param("updateTimeS") Long updateTimeS);
+
+    /**
+     * 查询库存列表
+     * @param storehouseId 仓库 id
+     * @param types 库存类型 2:中心仓库存；3:小仓实际库存；4:小仓退货库存
+     * @return
+     */
+    @RequestLine("GET /stocks/?storehouseId={storehouseId}&types={types}&isInStock=true")
+    public String getStocksInStock(@Param("storehouseId") Integer storehouseId,
+                            @Param("types") String types);
+
+    /**
+     * 查询库存列表
+     * @param storehouseId 仓库 id
+     * @param types 库存类型 2:中心仓库存；3:小仓实际库存；4:小仓退货库存
+     * @param updateTimeS 开始修改时间
+     * @return
+     */
+    @RequestLine("GET /stocks/?storehouseId={storehouseId}&types={types}&updateTimeS={updateTimeS}&isInStock=true")
+    public String getStocksInStock(@Param("storehouseId") Integer storehouseId,
+                            @Param("types") String types,
+                            @Param("updateTimeS") Long updateTimeS);
+
+    /**
+     * 查询库存列表
+     * @param storehouseId 仓库 id
+     * @param types 库存类型 2:中心仓库存；3:小仓实际库存；4:小仓退货库存
+     * @param updateTimeS 开始修改时间
+     * @return
+     */
+    /**
+     * 统计库存
+     * @param storehouseId 仓库 id,多个以','分隔
+     * @param type 库存类型，多个以','分隔 2:中心仓库存；3:小仓实际库存；4:小仓退货库存
+     * @param ridOfPackage 是否剔除框子
+     * @param sum 统计字段,多个以','分隔
+     * @return
+     */
+    @RequestLine("GET /stocks/aggregation/?storehouseId={storehouseId}&type={type}&ridOfPackage={ridOfPackage}&sum={sum}")
+    public String sumStocks(@Param("storehouseId") String storehouseId,
+                            @Param("type") String type,
+                            @Param("ridOfPackage") Boolean ridOfPackage,
+                            @Param("sum") String sum);
+
+}

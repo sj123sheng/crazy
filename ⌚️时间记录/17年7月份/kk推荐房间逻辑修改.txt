@@ -1,0 +1,28 @@
+同一时段，同一栏目，同一位置可以设置多个主播
+每次下拉刷新都能看到不一样的主播推荐
+
+涉及工程:
+  api-menu-sdk-1.1.41-SNAPSHOT
+	meShow-2.2.11.51
+	kk-hall-project-1.0.20
+
+新增5个jar包:	
+  reflections-0.9.9-RC1.jar
+	aspectjtools-1.7.4.jar
+	disconf-*.jar
+	api-menu-sdk-1.1.41.jar
+
+新增存储过程: p_conf_top_hallpart_insertv2.sql
+新增存储过程: p_res_tempactorroom_info_getroomid.sql
+新增存储过程: p_new_hpart_getroomlist_v4.sql
+
+tomcat/conf/context.xml和server.xml里面的jndi配置注释掉
+tomcat/lib jar包只留下tomcat自带的jar包
+tomcat/bin/catalina.sh 新增disconf参数配置:
+JAVA_PARAMS="-Ddisconf.conf_server_host=dconf1.kktv2.com:9061 -Ddisconf.enable.remote.conf=true -Ddisconf.version=1_0_0 -Ddisconf.app=meShow -Ddisconf.env=rd -Ddisconf.user_define_download_dir=./disconf/download2"
+
+JAVA_PARAMS="$JAVA_PARAMS -Dcat.app.name=meShowApi -Dcat.client.ip=10.0.3.12 -Dcat.maxMsgSize=1000 -Dcat.app.enable=true"
+
+JAVA_OPTS="$JAVA_OPTS -Xms1024M -Xmx1024M -XX:PermSize=256M -XX:MaxNewSize=256M -XX:MaxPermSize=256M $JAVA_PARAMS"
+
+disconf的集成到meShow 解决了meShow部署beta和线上的繁琐和容易出错的步骤，只需要本地打个war包就能直接部署

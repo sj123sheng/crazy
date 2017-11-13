@@ -1,0 +1,82 @@
+﻿通用的redis:
+
+用户新消息类别
+key:"<userId>_msgsort"  sort set
+value:"<userId>_<msgType>" 或者 "<userId>_1_<context>" *：即value存的消息redis的key
+score:time
+
+用户新消息类别详细(存最新一条的该类别的消息)
+key:"<userId>_<msgType>" 或者 "<userId>_1_<context>"  Hash
+    field:value
+	count:该消息类型下新消息数目
+	msgTime:消息推送时间
+	context:房间id
+	to:userId
+	from:消息来源人(动态评论人，关注followId等，无则为0)
+	message:消息内容
+	target:不知，这边没有存过这个字段的代码
+	
+key:"msgTotalCount"  Hash
+	field:value
+	<userId>：count(所有消息类型新消息和，即用户新消息数)
+
+key:"effLastTime"    Hash
+	field:value
+	"<userId>_<msgType>_<typeName>"
+	*：typeName有三种：read,Generate,readCount对应上次read时间(2,3,4,5,6)，上次Generate时间(只有msgType=5,6在此记录)，已读数目(只有msgType=6在此记录)
+
+上次Generate时间(mesType=1,2,3,4)
+key:"messageGeneratorLastCheck" String
+	time
+	
+	
+活动消息redis(msgType=5)
+
+最新一个活动消息详细
+key:"effectiveActivities" Hash
+	field:value
+	id:活动id
+	msgTime:消息推送时间
+	message:消息内容
+	gentime:不知，这边没有这个字段的代码
+
+所有活动id(目测是后台配置)
+key:"effectiveActivityIds" String
+	value:"<id>:<id>:<id>"
+
+用户已读活动id(必然是上一个的子集)
+key:"effActReadIds_<userId>" String
+	value:"<id>:<id>:<id>"
+
+新鲜播报redis(msgType=6)
+
+最新一条新鲜播报详细信息
+key:"lastRecommendMsg" Hash
+	field:value
+	id:活动id
+	msgTime:消息推送时间
+	message:消息内容
+	gentime:不知，这边没有这个字段的代码
+	
+新鲜播报总数
+key:"totalRecommendMsg"	String
+	Gross
+
+
+
+
+接口逻辑：
+
+获取用户消息列表(10006101)：
+	从"<userId>_msgsort"中按时间从小到大(zrange)分页得到类别数目count，value,根据value取出每个类别中的最新一条的消息详情返回。
+客户端定时刷新用户消息总数(10006102)
+	小程序只generate msgType=1/2/3/4，5/6的generate放在了这里(最小间隔时间1天),generate之后读redis "msgTotalCount"；
+删除消息，包括单一删除和全部删除(10006103)
+	删除房间消息。根据房间号单一删除或者删除该用户的全部房间消息。
+遍历消息(10006104)			 			
+	好像只返回23456的遍历消息[?],上次读时间（lrtFromClient）从客户端传入，无则从redis（effLastTime(read)）读出.如果不传startTime且页码为第一页，删除当前类消息（即标
+记该类别消息为已读）。然后从oracle查出返回.(lastReadTIme 到 generateTime（这里包括5，6也是以1234的generate的time做generatetime,不影响）)
+
+
+小程序:MessageGenerator
+	定时从oracle刷出不同类别的消息（1234）,更新到redis。

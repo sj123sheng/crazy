@@ -1,0 +1,12 @@
+meShow的disconf动态配置角标的家族id列表和角标名称、底色：
+# 家族海报上新增角标配置
+# 擂主家族标签名称和底色
+challenger.family=擂主,DC143C
+# 王牌家族标签名称和底色
+trump.family=王牌,C71585
+# 王牌家族id列表
+trump.familyIds=14037,11101,12686,19612,10783,19310,10962,10996
+# 金牌家族标签名称和底色
+goldMedal.family=金牌,7B68EE
+# 金牌家族id列表
+goldMedal.familyIds=11155,12915,20652,14450,10009,20781,10965

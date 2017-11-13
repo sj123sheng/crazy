@@ -1,0 +1,60 @@
+4、userLatestNews: 用户最新动态  
+删除动态(20006003)，不止这一个接口
+跟客户端沟通下他们调用 10005001 接口获取到的用户最新动态信息 latestNews 有没有用，没用的话把这个集合的所有逻辑全部删除
+
+5、familyMemberRefreshRecord: 刷新家族成员信息 
+familyMatchConfig: 家族擂台赛配置
+familyMatchPlayConfig: 家族擂台赛场次配置
+获取家族列表(10008001)
+获取本期/上期家族擂台赛主播结果(10008017)
+获取本期/上期家族擂台赛用户结果(10008018)
+获取家族擂台赛冠军榜(1:家族 2:富豪 3:用户)(10008019)
+获取本期/上期家族擂台赛主播结果(10008017) 获取本期/上期家族擂台赛用户结果(10008018)
+结合生成数据的小程序 http://git.kktv2.com/KKTV/KKTV_Server/SimpleProject/familyRoomLiveRefresh
+把缓存数据从 MongoDB 该成 Redis
+
+7507354,7521331,7521349
+
+7、areaActorCountRecord: 各省新增主播数统计 获取各省份本月新增主播数(10002036)，数据有小程序 http://git.kktv2.com/KKTV/KKTV_Server/SimpleProject/areaDataRefresh 生成
+改成Redis 缓存
+
+涉及工程：     familyRoomLiveRefresh-0.0.4  家族擂台赛去mongo
+              meShow-2.2.11.52  家族擂台赛和区域新增主播去mongo 主播代言团
+              kk-module-server-1.2.0  区域新增主播去mongo
+              areaDataRefresh 区域新增主播去mongo
+
+oracle：
+  新增表：STATISTICS_AREA_NEW_ACTORS
+  新增存储过程： p_add_area_new_actors
+               p_get_recent_familyMatchInfo
+
+disconf：
+   kk-module-server： 
+    kk-module-server.properties
+      areaNewActorsService.version=1.0.0
+
+
+
+老工程在src/main/java下配置了一部分xml文件 maven打包的时候不会把xml文件编译到class目录下
+有2种方式修改：
+  一种修改pom.xml文件 
+    <resources>
+      <resource>
+          <directory>src/main/java</directory>
+          <includes>
+              <include>**/*.xml</include>
+          </includes>
+      </resource>
+    </resources>
+  还有一种就是把xml文件迁移到resources目录下
+
+oracle ibatis的排序字段如果是数字类型 需要加to_number函数 否则会按照字符串排序
+
+家族擂台赛踩得一个深坑： 线上表与测试服、beta服的表结构不一致 线上CONF_FAMILY_MATCH有3个字段有默认值，测试服和beta服上没有默认值，导致插入时候没有数据
+          解决方案：做功能前先让dba把涉及到的线上的表结构和存储过程同步到测试和beta服
+区域新增主播踩得另一个深坑： 小程序线上oracle数据库配置写死了一个ip地址，这个ip对应的是线上的oracle备库，备库数据不会同步到主库，导致另一个模块查询该表时从主库查询不到数据
+          解决方案：将该小程序oracle数据库配置成域名映射到主库，将数据插入主库，主库数据会自动同步到备库，这样主备库都有数据了
+
+
+wiki代言团：
+  http://10.0.13.27:9090/meShow/entrance?parameter={%22FuncTag%22:51020102,%22actorId%22:%227538892%22,%22userId%22:%227528288%22,%22deviceUId%22:%22110120%22}

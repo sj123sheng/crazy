@@ -1,0 +1,69 @@
+SVN:
+  管理地址: http://10.0.16.5:8089/svnadmin/usr 
+  账号: jian.sheng
+  默认密码: 123456
+
+禅道:
+  管理地址: http://10.0.3.188/zentao/my/ 
+	用户名: jian.sheng
+	密码: 123456
+
+RPC服务管理:
+  用户名: admin
+  密码: 12345
+
+七牛管理后台: https://portal.qiniu.com/create
+  账号: senfa.guo@melot.cn
+  密码: melotkk@qiniu2016
+
+管理后台:
+  测试地址: http://10.0.0.7:9494/kkopp/loginAction!userLogin.action
+	beta地址: http://10.0.13.29:9494/kkopp/loginAction!userLogin.action
+  账号: melotadmin 密码：123456
+
+连接测试DNS地址: 10.0.13.2
+连接beta服DNS地址: 10.0.16.2
+
+灰度服api测试地址: http://sandkg.kktv1.com:8081/meShow/entrance
+
+ios: 杨益
+android: 王学超
+
+测试服账号:
+  7529564 1111a1 
+  127752647 q11111
+  13612121212 q11111 (userId:10002534)
+
+pg-测试服数据库: pg1.kktv2.com tshow 6531 tshow tshow2014
+pg-beta数据库: 10.0.13.31 kkstable 6531 kkcx kkcx2015
+
+秀币修改:
+  删除redis key: userNew_10002534 
+  修改pg appstable下的表: user_assets_info
+
+1. 主播后台:
+  地址: http://10.0.0.7:9494/kkqudao
+  账号1: 7519842 1111a1
+  账号2: 10002534 q11111 手机号：13612121212
+
+2. 家族长后台:
+  地址: http://10.0.0.7:9494/family
+  账号1: 10000644 123456  家族id:11209
+
+3. 运营后台:
+  地址: http://10.0.0.7:9494/operator
+  账号1: he.wang 123456
+
+4. 巡管后台:
+  地址: http://10.0.0.7:9494/kkopp
+  账号1: melotadmin 123456
+
+5. meShowAdmin:
+  地址: http://10.0.0.7:9494/meShowAdmin
+  账号1: duanduan.lin 123456
+  账号2: jian.sheng 123456
+
+6. 代理商后台:
+  地址: http://10.0.0.7:9595/agency/index.jsp
+  账号1: 100001 12345678
+  支付密码: 123456789

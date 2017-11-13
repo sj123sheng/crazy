@@ -1,0 +1,49 @@
+ERP
+ 账号： 小仓通用管理员/admin/admin1    admin
+ 密码： songxiaocai2015                             <>?!@#*() 
+
+maven私有库：http://121.40.208.242:8081/
+        账号：admin     密码：Songxc2015
+
+数据库公网IP：112.124.116.88 
+     数据库：sxc 
+     密码：123456 
+
+lts任务管理后台：http://218.244.151.7:8081/node-onoffline-log.htm    
+        账号：admin    密码：Songxiaocai2015
+lts执行任务日志目录：/data/lts/log/tasktracker  启动日志：/home/code/lts/dist/lts-1.6.7.1-bin/bin/nohup.out
+
+218测试服务器  ：218.244.135.116      密码：SXC201517)(&%#! 
+
+小菜宝测试服务器： 120.55.113.22     密码：N5M7LYSTKawi
+
+宋小福测试服务器： 121.40.177.211   密码： !@#$%^ /
+
+线上测试账号：
+ 手机号： 18820151111
+ 密码：     12345
+
+打包机服务器：112.124.116.88             	密码：!#%&($)s_x_c_Package@m_1
+
+wsop-erp线上服务器：218.244.131.227 		密码：!#%&(_)s_x_c_master
+
+wsop从服务器：120.26.109.176             	密码：!#%&(_)s_x_c_slave
+
+宋小福正式服务器：120.55.65.200        	密码：!#%&(C)s_x_f_@Master
+
+宋小福从服务器(宋小仓)：121.40.51.169  		密码：!#%&(C)s_x_f_@Slave  宋小福端口号：8380
+
+宋小菜app武汉小b
+ 账号：15107170545
+ 密码：963852
+
+阿里云报表数据库： 账号：sxcetl 密码：sxcetl 实例：songxiaocaietl.mysql.rds.aliyuncs.com:3306
+
+阿里云数据库： 账号：sxc 密码：QLX2QAU4 实例：songxiaocai.mysql.rds.aliyuncs.com:3306
+
+线上环境测试账号和密码：
+宋小菜：15158133638 12345
+宋小福：小仓通用管理员2 songxiaocai2015
+采秘：何为2  hello123
+宋小仓：统冠 tongguan    何为4  hello123     中心仓管理员1   12345
+麦大蔬：15258814236  747502

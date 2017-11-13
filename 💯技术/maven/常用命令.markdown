@@ -1,0 +1,19 @@
+mvn deploy:deploy-file -DgroupId=com.melot -DartifactId=api-menu-sdk -Dversion=1.1.41-SNAPSHOT -Dpackaging=jar -Dfile=./target/api-menu-sdk-1.1.41-SNAPSHOT.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/snapshots -DrepositoryId=snapshots
+
+mvn deploy:deploy-file -DgroupId=com.melot.module.driver.msgbuilder -DartifactId=kk-module-msgbuilder -Dversion=1.2.4-SNAPSHOT -Dpackaging=jar -Dfile=./target/kk-module-msgbuilder-1.2.4-SNAPSHOT.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/snapshots -DrepositoryId=snapshots
+
+mvn deploy:deploy-file -DgroupId=com.melot.module.driver.msgbuilder -DartifactId=kk-module-msgbuilder -Dversion=1.2.0 -Dpackaging=jar -Dfile=./target/kk-module-msgbuilder-1.2.0.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/releases -DrepositoryId=releases
+
+mvn deploy:deploy-file -DgroupId=com.melot.module.driver.msgbuilder -DartifactId=poster-module-msgbuilder -Dversion=1.0.2 -Dpackaging=jar -Dfile=./target/poster-module-msgbuilder-1.0.2.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/releases -DrepositoryId=releases
+
+mvn deploy:deploy-file -DgroupId=com.melot -DartifactId=melot-site-content-config -Dversion=1.1.16 -Dpackaging=jar -Dfile=./target/melot-site-content-config-1.1.16.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/releases -DrepositoryId=releases
+
+mvn deploy:deploy-file -DgroupId=com.melot -DartifactId=melot-site-content-config -Dversion=1.1.21-SNAPSHOT -Dfile=./target/melot-site-content-config-1.1.21-SNAPSHOT.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/snapshots -DrepositoryId=snapshots
+
+mvn deploy:deploy-file -DgroupId=com.melot.module.driver.msgbuilder -DartifactId=poster-module-msgbuilder -Dversion=1.0.2-SNAPSHOT -Dfile=./target/poster-module-msgbuilder-1.0.2-SNAPSHOT.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/snapshots -DrepositoryId=snapshots
+
+mvn deploy:deploy-file -DgroupId=com.melot.module.driver.msgbuilder -DartifactId=opus-module-msgbuilder -Dversion=1.1.15-SNAPSHOT -Dfile=./target/opus-module-msgbuilder-1.1.15-SNAPSHOT.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/snapshots -DrepositoryId=snapshots
+
+mvn deploy:deploy-file -DgroupId=com.melot.module -DartifactId=kk-doll-api -Dversion=1.0.0-SNAPSHOT -Dfile=./target/kk-doll-api-1.0.0-SNAPSHOT.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/snapshots -DrepositoryId=snapshots
+
+java -Dmaven.multiModuleProjectDirectory=/Users/shengjian/Applications/melotProjects/ModuleServer/sitecontentconfig -Dmaven.home=/Users/shengjian/Documents/apache-maven-3.3.9 -Dclassworlds.conf=/Users/shengjian/Documents/apache-maven-3.3.9/bin/m2.conf "-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=60865:/Applications/IntelliJ IDEA.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/shengjian/Documents/apache-maven-3.3.9/boot/plexus-classworlds-2.5.2.jar org.codehaus.classworlds.Launcher -Didea.version=2017.2.3 -s /Users/shengjian/Documents/apache-maven-3.3.9/conf/settings.xml -DskipTests=true deploy

@@ -1,0 +1,15 @@
+ssh-server服务在修改了端口的情况下，怎么git clone 代码
+今天在用git clone下载代码里，说端口拒绝访问，问了一下管理服务器的同事，才知道ssh服务器的端口已经改成了8120，不想使用https方式下载，怎么办?
+
+其实很简单，原来的clone命令是这样的：git clone git@XXX.com:username/resources.git
+
+只需要把这个命令改成：git clone ssh://git@XXX.com:8120/username/resources.git
+
+注意有三个地方的改动
+
+1、增加了ssh://
+
+2、增加了端口号
+
+3、把用户名前面的冒号改成了斜杠(/)
+

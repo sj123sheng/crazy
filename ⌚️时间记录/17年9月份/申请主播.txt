@@ -1,0 +1,35 @@
+状态:
+  -1:巡管审核驳回 0:主播申请巡管审核中 5:巡管审核通过家族审核中 6:家族驳回主播申请 7:家族通过申请，待用户确认协议 14:成为主播
+
+加入芝麻认证流程替代原来的巡管审核流程:
+  自由主播:
+    认证通过直接成为主播
+  家族主播:
+    认证通过到达状态5-等待家族审核:
+      家族审核通过直接成为主播
+
+申请主播表-hist_apply_actor_play新增2个字段: 
+  edit_hist_apply_actor_play.sql
+  verify_type(实名认证方式 数据库设置默认值:1):
+    1-巡管认证 2-芝麻认证
+  id_pic_status(身份证照片审核状态):
+    -1-未上传 1-已上传待审核 2-审核通过 3-审核未通过
+
+上线前需要执行更新sql:
+  update_hist_apply_actor_play.sql
+
+新增一张芝麻认证申请表:
+  hist_zmrz_apply.sql
+
+新增5个存储过程:
+  p_hist_apply_actor_play_getcertificationlist_v3.sql
+  p_hist_apply_actor_certification_count_v3.sql
+  p_hist_apply_actor_play_update_v3.sql
+  p_hist_apply_actor_play_getbyactorid_v3.sql
+  p_hist_apply_actor_play_insert_v3.sql
+
+bug fix:
+  ALTER TABLE tshow.hist_zmrz_apply ADD cert_no VARCHAR(32) NULL;
+  COMMENT ON COLUMN tshow.hist_zmrz_apply.cert_no IS '认证用户身份证号码';
+  ALTER TABLE tshow.hist_zmrz_apply ADD cert_name VARCHAR(32) NULL;
+  COMMENT ON COLUMN tshow.hist_zmrz_apply.cert_name IS '认证用户姓名';
