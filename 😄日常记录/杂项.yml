@@ -45,6 +45,6 @@ QQVIP账号: 84786536 密码: zhang@1995
   测试服:  http://10.0.3.24:82/CDN/refresh/?I=20010302
   beta服:  http://10.0.13.22/CDN/refresh/?I=20010302
 
-大厅栏目(栏目id：3739)下的房间列表:
+大厅栏目(抓娃娃栏目id：3739)下的房间列表:
   测试服:  http://10.0.3.24:82/CDN/output/M/1/I/20010302/P/a-1_c-108_cataId-3739_start-0_offset-40_platform-2_v-106/json.js
-  beta服:  http://10.0.13.22/CDN/output/M/1/I/20010302/P/a-1_c-108_cataId-3739_start-0_offset-40_platform-2_v-106/json.js
+  beta服:  http://10.0.13.22/CDN/output/M/1/I/20010302/P/a-1_c-108_cataId-1210_start-0_offset-40_platform-2_v-106/json.js

@@ -80,3 +80,5 @@ API:
   16864311 小黄人
   16864019 星座娃娃
   16864194 小僵尸
+
+正式服获取娃娃机栏目列表接口: http://api.kktv1.com:8080/meShow/entrance?parameter={%22FuncTag%22:20010302,%22cataId%22:1076,%22platform%22:1,%22start%22:0,%22offset%22:10,%22a%22:1,%22c%22:2}
