@@ -15,5 +15,3 @@ Archive:
  ✔ 简历推荐给紫川 @done (17-06-06 14:20)
  ✔ 答复展堂 @done (17-06-06 14:20)
  ✔ 租房子 @done (17-06-04 17:50)
-
-//request.setIdentityParam("{\"identity_type\":\"CERT_INFO\",\"cert_type\":\"IDENTITY_CARD\",\"cert_name\":\"宋建明\",\"cert_no\":\"123165421545154\"}");// 必要参数

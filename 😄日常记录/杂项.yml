@@ -26,17 +26,16 @@ qq密码： SJ123SHENGJIAN
 
 房贷：工商银行杭州开元支行 吴国英 电话：13588088919
 
-mysql -u sxc -p  123456  连接本机mysql
-mysql -h主机地址 -u root -p 123456  连接远程mys
-
 oh-my-zsh的安装
   yum install zsh -y
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 如果重装 需要先rm -rf 删除zsh和oh-my-zsh文件夹
 
-瑷颐湾无线路由器管理员密码： 697586
-安卓切换灰度和正式服 在搜索输入：kk-sandbox 在点击搜索图标
+瑷颐湾无线路由器管理员密码: 697586
+安卓切换灰度和正式服 在搜索输入: kk-sandbox 在点击搜索图标
+
+深圳社保卡电脑号: 636270873
 
 QQ账号: 395205950  密码: ZXIAOW66jie
 QQVIP账号: 84786536 密码: zhang@1995
