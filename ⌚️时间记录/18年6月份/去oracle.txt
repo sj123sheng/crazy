@@ -1,0 +1,13 @@
+现在有如下程序还在连接老的 帐号模块，麻烦尽快升级: 
+100.32:
+/data/app/kkSimpleProject/kk-quiz-project-meShow-1.0.0-grey/lib/kkcore-account-api-1.0.7.jar
+/data/app/melot-spam-immune-system/lib/kkcore-account-api-1.0.4.jar
+
+100.75/100.76:
+/data/app/KKmoduledir/kk-userSecurity-server-1.0.0/lib/kkcore-account-api-1.0.7.jar
+/data/app/KKmoduledir/kk-family-server-1.0.0/lib/kkcore-account-api-1.0.7.jar
+/data/app/KKmoduledir/family-module-server-1.0.12/lib/kkcore-account-api-1.0.7.jar
+/data/app/KKmoduledir/family-module-server-2.0.0-new/lib/kkcore-account-api-1.0.7.jar
+/data/app/KKmoduledir/single-chat-server-1.0.5/lib/kkcore-account-api-1.0.4.jar
+/data/app/moduleV4/single-chat-server-1.0.4/lib/kkcore-account-api-1.0.4.jar
+/data/app/moduleV4/game-websocket-1.0.0/lib/kkcore-account-api-1.0.2.jar

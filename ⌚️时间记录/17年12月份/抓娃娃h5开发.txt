@@ -1,0 +1,8 @@
+配合联调
+
+<groupId>com.melot.module</groupId>
+  <artifactId>kk-module-quickstart-archetype</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>maven-archetype</packaging>
+
+  http://maven.kktv2.com:8081/nexus/content/groups/public

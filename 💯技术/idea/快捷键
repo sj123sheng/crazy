@@ -1,43 +1,44 @@
-shift + E（find in path在目录下输入内容查找包含该内容的文件）
-shift + Q（显示get,set方法）
-shift + R（显示隐藏structure-类结构） 
-Shift + 2 (Rename) 需要点击切换到大写模式
-shift + ~（当前文件相关git操作)
-shift + . （代码提示)  
-shift + D（back-退回上一个编辑的文件）
-shift + S（进入接口实现方法）
-shift + F（forward-返回之前编辑的文件）
-shift + /   作用：快速插入。代码补全
-shift + 3  优化imports
-shift + Enter 重新导入包，代码提示
-shift + shift  searcheverywhere
-command + ;（代码提示) 
-command + 1（ back) 
-command + 2（forward) 
-command + 3（compare with branch) 
-command + s（ 进入接口实现方法) 
-command + d（ 进入接口方法) 
-command + z（回滚) 
-command + x（剪切) 
-command + c（复制) 
-command + f（查找) 
-command + r（替换) 
-command + b（查找引用该方法的类)
-command + u（大小写转换 toggle case)
-shift + enter (向下起新行)
-Ctrl + D （复制当前行到下一行，git-show diff)
-Ctrl + E （打开最近的文件)
-Ctrl + Y （删除当前行到下一行)
-Ctrl + F （Find)
-Ctrl + R （Replace)
-Ctrl+/ 注释当前行,再按则取消注释。
-Ctrl + Alt + S 打开IDEA设置
-Ctrl+Shift+/ 注释选中区域,再按则取消注释。
-Ctrl+”+/-”,当前方法展开、折叠 
-Ctrl+Shift+”+/-”,全部展开、折叠
-Ctrl + Shift + 0 把工程加入git管理
-
-Ctrl +  Alt + m 将选中代码放入一个方法体里面，并且自动生成该方法
+shift + E: （find in path在目录下输入内容查找包含该内容的文件）
+shift + Q: （显示get,set方法）
+shift + R: （显示隐藏structure-类结构） 
+Shift + 2:  (Rename) 需要点击切换到大写模式
+shift + ~: （当前文件相关git操作)
+shift + .:  （代码提示)  
+shift + D: （back-退回上一个编辑的文件）
+shift + S: （进入接口实现方法）
+shift + F: （forward-返回之前编辑的文件）
+shift + /:   作用：快速插入。代码补全
+shift + 3:   优化imports
+shift + Enter:  重新导入包，代码提示
+shift + shift:   searcheverywhere
+command + ;: （代码提示) 
+command + 1: （ back) 
+command + 2: （forward) 
+command + 3: （compare with branch) 
+command + s: （ 进入接口实现方法) 
+command + d: （ 进入接口方法) 
+command + z: （回滚) 
+command + x: （剪切) 
+command + c: （复制) 
+command + f: （查找) 
+command + r: （替换) 
+command + b: （查找引用该方法的类)
+command + u: （大小写转换 toggle case)
+shift + enter:  (向下起新行)
+Ctrl + D: （复制当前行到下一行，git-show diff)
+Ctrl + E: （打开最近的文件)
+Ctrl + Y: （删除当前行到下一行)
+Ctrl + F: （Find)
+Ctrl + R: （Replace)
+Ctrl+/: 注释当前行,再按则取消注释。
+Ctrl + Alt + S: 打开IDEA设置
+Ctrl + Shift + /: 注释选中区域,再按则取消注释。
+Ctrl + ”+/-”,: 当前方法展开、折叠 
+Ctrl + Shift + ”+/-”: 全部展开、折叠
+Ctrl + Shift + 0: 把工程加入git管理
+command + Shift + F: search-all documentation in dash
+command + Shift + D: smart-search documentation in dash
+Ctrl +  Alt + m: 将选中代码放入一个方法体里面，并且自动生成该方法
 
 F9            resume programe 恢复程序，结束断点
 Alt+F10       show execution point 显示执行断点

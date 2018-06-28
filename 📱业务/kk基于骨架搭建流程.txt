@@ -1,0 +1,6 @@
+选中: kk-module-quickstart-archetype
+新增package属性: 输入com.mleot.kk.XX
+
+通过修改配置文件的方法来实现删除: ~/Library/Caches/IntelliJIdea2016.2/Maven/Indices/UserArchetypes.xml
+
+生成骨架命令: mvn archetype:create-from-project

@@ -1,0 +1,31 @@
+
+oracle 用户绑定银行卡表:
+  family_member: PAYROLL，表示是否委托代发；
+    新增一个字段: CLIENT_USER_ID (委托他人带发工资的被委托人用户id)
+
+  actor_bank_account: 记录主播的银行卡信息； 联合主键改成ACTORID主键 如果是自由主播和不是主播的收款人，经纪服务公司id从本表中取
+    ISMINE: 是否自己银行卡号：0，不是；1，是 (已废弃)
+
+  family_bank_account: 如果是家族主播，经纪服务公司id从本表中取；
+
+  family_bank_account_private: 如果主播是委托家族代发，收款人信息从本表中取；
+
+52020101, 52020101接口: 新增一个入参 userVerifyType 用户实名认证类型 不传或0-申请主播实名认证 1-普通用户实名认证
+40000020接口: 新增一个短信发送类型 38: 解绑银行卡
+
+涉及工程:
+  meShow:
+  kk-userSecurity-module:
+    kk-userSecurity-project
+  third:
+
+发送验证码: 需要往pg tshow数据库 conf_sms表插入初始化数据
+
+财税云生产环境配置:
+    地址:  http://www.dashengcsy.com
+    corpId: KKTV5
+    accessKey: tkegicgh
+    accessSecret: 6fc9ab049527423eb93af9af25390cf0
+    serviceOrgCode: TUNWAR
+    报文加解密秘钥DesKey: y0xp68K5
+    回调地址: http://api.kktv1.com:8080/meShow/external/signElectronicContract

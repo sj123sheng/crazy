@@ -1,0 +1,9 @@
+涉及工程:
+  meShow:
+  kk-nationalPK-module: 新模块
+
+disconf:
+  kk-nationalPK-module: 发放邮件列表配置
+
+数据库:
+  sql: kk-nationalPK-module下的SQL目录下的脚本

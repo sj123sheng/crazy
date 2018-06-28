@@ -1,0 +1,22 @@
+上传api jar包: 
+  必须把pom.xml里面的parent标签删除
+
+骨架maven配置:
+
+  <archetype>
+    <groupId>com.melot.module</groupId>
+    <artifactId>kk-module-quickstart-archetype</artifactId>
+    <version>2.5.0</version>
+    <repository>
+      http://maven.kktv2.com:8081/nexus/content/repositories/releases
+    </repository>
+  </archetype>
+
+生成骨架命令: mvn archetype:create-from-project
+
+自动生成单表增删改查功能: 
+  表自增长主键: 
+    insert标签加入:
+    <selectKey keyProperty="histLiveRoomAuditId" order="BEFORE" resultType="java.lang.Integer">
+      select nextval('hist_live_room_audit_hist_live_room_audit_id_seq'::regclass)
+    </selectKey>

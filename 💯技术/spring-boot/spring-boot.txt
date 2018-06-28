@@ -19,13 +19,6 @@ step 2
 step 3
 通过修改application文件的server.port的端口，启动。多个实例，需要多个端口，分别启动。
 
-package com.sxc.jotunheim.stockclient;
-
-import com.sxc.jotunheim.stockclient.dto.stock.StockInDTO;
-import com.sxc.jotunheim.stockclient.dto.stock.StockOutDTO;
-import feign.Headers;
-import feign.Param;
-import feign.RequestLine;
 
 /**
  * PackageName: com.sxc.jotunheim.stockclient

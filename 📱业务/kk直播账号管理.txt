@@ -19,27 +19,48 @@ RPC服务管理:
 管理后台:
   测试地址: http://10.0.0.7:9494/kkopp/loginAction!userLogin.action
 	beta地址: http://10.0.13.29:9494/kkopp/loginAction!userLogin.action
-  账号: melotadmin 密码：123456
-
-连接测试DNS地址: 10.0.13.2
-连接beta服DNS地址: 10.0.16.2
+  账号: melotadmin 
+  密码: 123456
 
 灰度服api测试地址: http://sandkg.kktv1.com:8081/meShow/entrance
 
-ios: 杨益
-android: 王学超
+platform平台: 1:web2:android3:iphone4:ipad
+
+正式服kK运营人员管理后台: 
+  地址: http://manage.kktv8.com:9595/kkopp/loginAction!userLogin.action
+  账号: jian.sheng 
+  密码: fsi26UpA
 
 测试服账号:
   7529564 1111a1 
   127752647 q11111
   13612121212 q11111 (userId:10002534)
 
+自己账号:
+  130267700 q11111
+  130281635 shengjian123
+  115054532 a1234567
+
+cat账号: 
+  http://cat.kkmonitor.com:9091/cat/r  账号shengjian 密码sjcat_b9
+  将61.130.9.210 cat.kkmonitor.com这条加到你本地的hosts文件中
+
 pg-测试服数据库: pg1.kktv2.com tshow 6531 tshow tshow2014
 pg-beta数据库: 10.0.13.31 kkstable 6531 kkcx kkcx2015
+
+用户信息表:
+  pg kkstable: base_user_info
+  oracle tshow: user_info
+秀币流水表:
+  oracle tshow: HIST_USER_SHOWMONEY_INOUT
 
 秀币修改:
   删除redis key: userNew_10002534 
   修改pg appstable下的表: user_assets_info
+
+beta服务器:
+  账号: root
+  密码: kk2017
 
 1. 主播后台:
   地址: http://10.0.0.7:9494/kkqudao
@@ -48,7 +69,11 @@ pg-beta数据库: 10.0.13.31 kkstable 6531 kkcx kkcx2015
 
 2. 家族长后台:
   地址: http://10.0.0.7:9494/family
-  账号1: 10000644 123456  家族id:11209
+  账号1: 10003832 q11111    家族id:11396
+  账号2: 10000644 123456    家族id:11209
+  账号2: 10006538 Aa123456  家族id:11449
+  beta服账号1: 10000267 123456 家族id:11096
+  beta服账号2: 10002544 123456 家族id:11456
 
 3. 运营后台:
   地址: http://10.0.0.7:9494/operator
@@ -67,3 +92,8 @@ pg-beta数据库: 10.0.13.31 kkstable 6531 kkcx kkcx2015
   地址: http://10.0.0.7:9595/agency/index.jsp
   账号1: 100001 12345678
   支付密码: 123456789
+
+7. 小程序管理后台:
+  地址: http://10.0.3.29:6060/elastic-job-melot-console/overview
+  账号: root
+  密码: root

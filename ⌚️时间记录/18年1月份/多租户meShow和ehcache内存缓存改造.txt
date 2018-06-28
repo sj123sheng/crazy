@@ -1,0 +1,12 @@
+涉及工程:
+  melot-cache-util:  jar包升级到2.0.1 
+    cacheName加入租户id前缀变量 不同租户生成不同内存缓存对象 key还是同一个值
+  melot-sdk:  jar包升级到3.0.0
+    引用支持多租户的内存缓存jar 
+  melot-api-common:  jar包升级到1.0.0  
+    从request请求的header中获取租户id变量 设置租户id变量到当前租户上下文线程变量中
+  meShow:  对应的jar升级到上述版本中
+
+模块改造:
+  kk-module-server: 对应的ehcache内存框架引入 未完成
+  

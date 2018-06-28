@@ -1,0 +1,22 @@
+sql:
+
+  ALTER TABLE kkcx.hist_actor_ladder_match ADD max_contribution_user_id int NULL;
+  COMMENT ON COLUMN kkcx.hist_actor_ladder_match.max_contribution_user_id IS '贡献最大的用户id(消耗礼物金额最大的用户id)';
+
+  ALTER TABLE hist_actor_ladder_match ADD max_contribution_user_consume bigint NULL;
+  COMMENT ON COLUMN hist_actor_ladder_match.max_contribution_user_consume IS '贡献最大的用户消耗秀币数';
+
+disconf:
+  # 天梯赛前50主播胜场贡献榜和富豪榜用户发放奖励的座驾id
+  give.reward.carId=1163
+
+node:
+  调用模块接口升级
+
+kk-family-server:
+  新增接口
+
+需求文档地址: https://shimo.im/docs/G5T9IVev0cApt3ax/
+
+
+

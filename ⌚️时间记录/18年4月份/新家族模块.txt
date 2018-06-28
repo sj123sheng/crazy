@@ -1,0 +1,4 @@
+user2Actor: actorService.insertActorInfo(actorInfo);
+p_res_room_info_insert_v2: 
+  insert into tshow.res_room_weight(subcatlg_id,roomid,weight,is_recommend,update_time,create_time)
+   values(26,i_actorid,0,0,localtimestamp,now());

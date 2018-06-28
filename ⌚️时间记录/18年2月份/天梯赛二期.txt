@@ -1,0 +1,4 @@
+disconf配置:
+  接入公共配置：
+      db-> kkcx 
+      redis-> kkapicache

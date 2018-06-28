@@ -1,15 +1,35 @@
-control+R 输入关键字查找最近输入的命令
+control+R: 输入关键字查找最近输入的命令
 
-sudo jmap -histo 4704 > jmap.txt
+账户切换至root: sudo su - (不用密码的)
+
+查看进程内存情况: sudo jmap -histo 4704 > jmap.txt
 频繁gc的时候，使用这个命令查看进程内存情况，如果连续查看3次发现某个com.sxc的对象大量留存在内存中，很有可能就是这个对象造成的内存泄漏。 4704为进程id（pid）
 
-/home/git/.ssh   vim authorized_keys  gitlab所在服务器上ssh_key添加
+gitlab添加ssh_key: /home/git/.ssh   vim authorized_keys  
 
-cat > catalina.out  清空catalina.out 日志
+清空日志: cat > catalina.out  
 
-grep catalina.out -e "20160729"    查找文件中包含的字符串 
+hosts文件配置机器名称映射: 127.0.0.1  localhost  guest4(机器名称需要配置)
 
-cat -n  catalina.out |grep "地形"  得到关键日志的行号 
+查找文件中包含的字符串: grep 51050606 catalina.out | grep 10002534
+查找压缩包中包含的字符串: zcat catalina.out.tar | grep 10002534
+
+1、或操作:
+  grep -E '123|abc' filename  // 找出文件（filename）中包含123或者包含abc的行
+  egrep '123|abc' filename    // 用egrep同样可以实现
+  awk '/123|abc/' filename   // awk 的实现方式
+
+2、与操作:
+  grep pattern1 files | grep pattern2 ：显示既匹配 pattern1 又匹配 pattern2 的行。
+
+3、其他操作:
+  grep -i pattern files ：不区分大小写地搜索。默认情况区分大小写，
+  grep -l pattern files ：只列出匹配的文件名，
+  grep -L pattern files ：列出不匹配的文件名，
+  grep -w pattern files ：只匹配整个单词，而不是字符串的一部分（如匹配‘magic’，而不是‘magical’），
+  grep -C number pattern files ：匹配的上下文分别显示[number]行，
+
+得到关键日志的行号: cat -n  catalina.out |grep "地形"   
 cat -n  catalina.out |tail -n +561500|head -n 20 
 tail -n +92表示查询92行之后的日志
 head -n 20 则表示在前面的查询结果里再查前20条记录

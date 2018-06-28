@@ -1,0 +1,4 @@
+新增充值模块: 对应oracle RECHARGING_RECORD表
+  新增2个新接口:
+    根据订单id查询订单详情
+    根据订单id更新赠送的秀币

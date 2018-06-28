@@ -5,5 +5,3 @@ Spring Boot工程DEMO搭建:
 小程序“区域新增主播”areaDataRefreshBoot使用spring-boot加jdk1.8重新构建:
   gitlab地址:
     git@10.0.16.6:KKTV/KKTV_Server/SimpleProject/areaDataRefreshBoot.git
-
-spring-boot搭建一个生成sv的工程

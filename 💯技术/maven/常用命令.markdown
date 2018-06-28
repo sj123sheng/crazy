@@ -17,3 +17,9 @@ mvn deploy:deploy-file -DgroupId=com.melot.module.driver.msgbuilder -DartifactId
 mvn deploy:deploy-file -DgroupId=com.melot.module -DartifactId=kk-doll-api -Dversion=1.0.0-SNAPSHOT -Dfile=./target/kk-doll-api-1.0.0-SNAPSHOT.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/snapshots -DrepositoryId=snapshots
 
 java -Dmaven.multiModuleProjectDirectory=/Users/shengjian/Applications/melotProjects/ModuleServer/sitecontentconfig -Dmaven.home=/Users/shengjian/Documents/apache-maven-3.3.9 -Dclassworlds.conf=/Users/shengjian/Documents/apache-maven-3.3.9/bin/m2.conf "-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=60865:/Applications/IntelliJ IDEA.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/shengjian/Documents/apache-maven-3.3.9/boot/plexus-classworlds-2.5.2.jar org.codehaus.classworlds.Launcher -Didea.version=2017.2.3 -s /Users/shengjian/Documents/apache-maven-3.3.9/conf/settings.xml -DskipTests=true deploy
+
+mvn deploy:deploy-file -DgroupId=com.melot.datacenter -DartifactId=new-rcmds-api -Dversion=0.2 -Dfile=/Users/shengjian/Downloads/new-rcmds-api-0.2-sources.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/releases -DrepositoryId=releases
+
+mvn deploy:deploy-file -DgroupId=com.melot.module.driver.msgbuilder -DartifactId=family-module-msgbuilder -Dversion=2.0.0-SNAPSHOT -Dfile=./target/family-module-msgbuilder-2.0.0-SNAPSHOT.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/snapshots -DrepositoryId=snapshots
+
+mvn deploy:deploy-file -DgroupId=com.melot.module.driver.msgbuilder -DartifactId=family-module-msgbuilder -Dversion=2.0.0 -Dfile=./target/family-module-msgbuilder-2.0.0.jar -Durl=http://maven.kktv2.com:8081/nexus/content/repositories/releases -DrepositoryId=releases

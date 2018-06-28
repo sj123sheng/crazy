@@ -1,0 +1,17 @@
+涉及工程:
+  meShow
+  kk-doll-server
+
+sql脚本:
+  update1.sql
+  update2.sql
+disconf:
+  meShow:
+    # 一起玩大厅配置信息
+    playTogether.config=
+
+70152渠道号: 屏蔽抓娃娃栏目
+
+[{"cataId":1222,"title":"欢乐跳舞机","subTitle":"用你的表情来跳舞","type":3,"hall_poster":"/poster/offical/cata/dance_machine.png","title_poster":"/poster/offical/dance.jpg","initialWeightValue":7,"showActorPoster":true,"isTop":true},{"cataId":1210,"title":"开心抓娃娃","subTitle":"直播抓娃娃 包邮送到家","type":2,"hall_poster":"/poster/offical/cata/catch_doll.png","title_poster":"/poster/offical/doll.jpg","initialWeightValue":6,"showActorPoster":false,"isTop":false},{"cataId":1220,"title":"互动游戏","subTitle":"多人联网玩游戏","type":4,"hall_poster":"/poster/offical/cata/interactive_game.png","title_poster":"/poster/offical/interactive_game.jpg","initialWeightValue":5,"showActorPoster":false,"isTop":false},{"cataId":1226,"title":"全民PK","subTitle":"刺激匹配 下一个还有谁","type":6,"hall_poster":"/poster/offical/cata/national_pk.png","title_poster":"/poster/offical/national_pk.jpg","initialWeightValue":4,"showActorPoster":false,"isTop":false},{"cataId":1205,"title":"情感电台","subTitle":"声控声优的聚集地","type":5,"hall_poster":"/poster/offical/cata/emotional_radio.png","initialWeightValue":3,"showActorPoster":true,"isTop":false},{"cataId":1027,"title":"相亲交友","subTitle":"虚拟相亲 真实交友","type":7,"hall_poster":"/poster/offical/cata/friendship_dating.png","initialWeightValue":1,"showActorPoster":false,"isTop":false},{"cataId":0,"title":"1V1视频","subTitle":"与心仪的TA视频畅聊","type":1,"hall_poster":"/poster/offical/cata/single_chat.png","title_poster":"/poster/offical/cata/single_chat.png","initialWeightValue":1,"showActorPoster":false,"isTop":false}]
+
+[{"cataId":0,"title":"1V1视频","subTitle":"与心仪的TA视频畅聊","type":1,"hall_poster":"/poster/offical/cata/single_chat.png","title_poster":"/poster/offical/cata/single_chat.png","initialWeightValue":7,"showActorPoster":true,"isTop":true},{"cataId":1222,"title":"欢乐跳舞机","subTitle":"用你的表情来跳舞","type":3,"hall_poster":"/poster/offical/cata/dance_machine.png","title_poster":"/poster/offical/dance.jpg","initialWeightValue":8,"showActorPoster":false,"isTop":false},{"cataId":1210,"title":"开心抓娃娃","subTitle":"直播抓娃娃 包邮送到家","type":2,"hall_poster":"/poster/offical/cata/catch_doll.png","title_poster":"/poster/offical/doll.jpg","initialWeightValue":6,"showActorPoster":false,"isTop":false},{"cataId":1220,"title":"互动游戏","subTitle":"多人联网玩游戏","type":4,"hall_poster":"/poster/offical/cata/interactive_game.png","title_poster":"/poster/offical/interactive_game.jpg","initialWeightValue":5,"showActorPoster":false,"isTop":false},{"cataId":1226,"title":"全民PK","subTitle":"刺激匹配 下一个还有谁","type":6,"hall_poster":"/poster/offical/cata/national_pk.png","title_poster":"/poster/offical/national_pk.jpg","initialWeightValue":4,"showActorPoster":false,"isTop":false},{"cataId":1205,"title":"情感电台","subTitle":"声控声优的聚集地","type":5,"hall_poster":"/poster/offical/cata/emotional_radio.png","initialWeightValue":3,"showActorPoster":true,"isTop":false},{"cataId":1027,"title":"相亲交友","subTitle":"虚拟相亲 真实交友","type":7,"hall_poster":"/poster/offical/cata/friendship_dating.png","initialWeightValue":1,"showActorPoster":false,"isTop":false}]

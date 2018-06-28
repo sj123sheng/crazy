@@ -1,0 +1,7 @@
+sql:
+  ALTER TABLE hist_zmrz_apply ADD facial_picture text NULL;
+    COMMENT ON COLUMN hist_zmrz_apply.facial_picture IS '面部图片(base64编码后的字符串)';
+
+  新增表: 
+    hist_live_room_audit
+    ALTER TABLE hist_live_room_audit ADD CONSTRAINT hist_live_room_audit_hist_live_room_audit_id_pk PRIMARY KEY (hist_live_room_audit_id);

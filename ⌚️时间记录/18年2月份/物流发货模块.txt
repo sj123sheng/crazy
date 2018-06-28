@@ -1,0 +1,3 @@
+sql:
+  pg tshow 新增2张表
+

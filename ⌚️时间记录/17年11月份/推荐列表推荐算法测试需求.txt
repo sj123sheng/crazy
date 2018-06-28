@@ -1,0 +1,30 @@
+涉及工程:
+  meShow
+  kk-hall-project
+
+disconf:
+  meShow: JedisPoolConfig.xml
+   <redisSource name="RecommendAlgorithmSource">
+    <connectionHost>redis1.kktv2.com</connectionHost>
+    <connectionPort>6379</connectionPort>
+    <connectionPassword>youknowthat</connectionPassword>
+    <connectionTimeOut>5000</connectionTimeOut>
+    <connectionDatabase>12</connectionDatabase>
+    <maxActive>10</maxActive>
+    <maxIdle>5</maxIdle>
+    <minIdle>1</minIdle>
+    <testOnBorrow>true</testOnBorrow>
+    <testOnReturn>true</testOnReturn>
+    <testWhileIdle>true</testWhileIdle>
+    <maxWait>3000</maxWait>
+  </redisSource>
+
+  meShow: autoConfig.properties
+    # 推荐列表 为了对比多个推荐算法的优劣 用于测试的渠道号列表
+    recommend.channelIds=70152,70220
+    # 推荐列表 为了对比多个推荐算法的优劣 指定开始注册时间后的用户用于测试 时间戳(单位:毫秒) 1512403200000
+    recommend.registrationTime=1483200000000
+
+// KK推荐缓存(最原始的推荐主播列表 即直接按照S\A\B\C\D排序 等级一样按照热度排序)
+public static final String KK_SIMPLE_RECOMMENDED_ROOM_KEY = "kk_simple_recommended_room_key";
+    

@@ -1,0 +1,29 @@
+老的主播申请表(hist_apply_actor_play): 拆分成新的2张表
+  用户实名认证表(res_user_verify)
+  用户申请成为主播表(res_user_apply_actor)
+  
+老的家族模块: 新建一个disconf版本号 升级服务版本信息
+
+新的用户安全模块: 用户实名认证表相关接口
+新的家族模块: 用户申请成为主播相关接口
+
+主播模块需要改造发布: 查询用户是否允许开播 底层表关联改成res_user_apply_actor
+
+管理后台需要改造发布: 3个管理后台需要改造发布
+
+kkgame需要改造发布: 更新获取推流地址接口 60001004
+
+用户申请主播涉及接口:
+  20010501:  OtherFunctions.getApplyForActorInfo 获取申请主播状态信息
+  50001020:  OtherFunctions.applyForActor  申请主播
+  50001022:  OtherFunctions.cancelApplyForActor  取消主播申请
+
+  51040101:  FamilyAction.getFamilyApplyActorList  获取家族待审核主播列表
+  51040102:  FamilyAction.auditFamilyApplyActor  家族长审核主播申请
+
+  52020101:  ActorFunction.applyForActor 申请成为主播（接入芝麻认证-芝麻认证初始化接口）
+  52020102:  ActorFunction.verifyAuthResult  校验芝麻认证结果（认证成功：如果申请的是自由主播直接变成主播，如果是家族主播等待家族审核通过后变成主播）
+
+kkgame获取推流地址接口: 
+  http://sandkg.kktv1.com:8080/kkgame/entrance?parameter={%22FuncTag%22:60001004,%22userId%22:130267700,%22token%22:%22A29B10F21F43DE4E12B216CED5C5476B0B%22,%22a%22:10,%22cdnType%22:1}
+  http://apikg.kktv1.com:8080/kkgame/entrance?parameter={%22FuncTag%22:60001004,%22userId%22:130267700,%22token%22:%22A2A7DC7EC5D25D430085EA7576444B31AA%22,%22a%22:10,%22cdnType%22:1}
