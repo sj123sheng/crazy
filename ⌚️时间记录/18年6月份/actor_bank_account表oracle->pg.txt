@@ -1,0 +1,7 @@
+线上需要oracle同步到pg的表:
+  actor_bank_account
+  family_bank_account
+  family_bank_account_private
+
+家族模块改造:
+  family_member
