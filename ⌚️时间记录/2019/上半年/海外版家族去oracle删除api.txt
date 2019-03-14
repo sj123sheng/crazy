@@ -1,15 +1,3 @@
-涉及api:
-  51020304
-  20010501
-
-kk-family-server:
-  disconf:
-
-kk-family-project:
-  disconf:
-    
-
-
 删除api:
 接口标志  接口描述
   家族

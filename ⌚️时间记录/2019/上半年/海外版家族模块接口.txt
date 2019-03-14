@@ -24,3 +24,14 @@ meShowAdmin:
   11: channelUserService.getNewChannelUser
   12: channelUserService.addChannelUser
   13: channelUserService.updateChannelUser
+
+涉及api:
+  51020304
+  20010501
+
+kk-family-server:
+  disconf:
+
+kk-family-project:
+  disconf:
+    
