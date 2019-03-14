@@ -1,0 +1,26 @@
+meshow: 
+  1: familyOperatorService.actor2User
+  2: familyInfoService.getNewFamilyInfoByFamilyId
+
+kk-abroad-levelup-project:
+  1: familyAdminService.getFamilyMemberInfo
+  2: familyOperatorService.checkBecomeFamilyMember
+
+kk-abroad-signedtalent-server:
+  1: familyAdminNewService.userTranferFamily
+  2: familyInfoService.getNewFamilyInfoByFamilyId
+
+meShowAdmin:
+  1: familyInfoService.updateFamilyInfo
+  2: familyAdminNewService.applyFamily
+  3: familyBankAccountService.getFamilyBankAccountByFamilyId
+  4: familyBankAccountService.getFamilyBankAccountPrivateByFamilyId
+  5: familyBankAccountService.saveFamilyBankAccount
+  6: familyUserService.updateFamilyUser
+  7: familyOperatorService.frozenFamily
+  8: familyOperatorService.getJoinFamilyApplicantCount
+  9: familyOperatorService.getJoinFamilyApplicant
+  10: familyOperatorService.checkBecomeFamilyMember
+  11: channelUserService.getNewChannelUser
+  12: channelUserService.addChannelUser
+  13: channelUserService.updateChannelUser

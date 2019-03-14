@@ -1,0 +1,56 @@
+交互: smb://10.0.0.55/kktv/design/APP/KKTV/6.1.1/交互/电商_分销下单模块_1010
+需求: https://shimo.im/docs/HbY3iSJ8z3oLfyF4
+
+接口:
+  51060551比旧接口51060503变化: 
+    新增字段: 
+      sellerNickname,payTime,sendTime,receiveTime,
+      products->supportReturn,distributorCommissionRate,distributorCommissionAmount
+  51060550比旧接口51060504变化: 
+    新增字段: consigneeName,orders->products->supportReturn,distributorCommissionAmount
+    入参state新增订单状态: 5-退款中 6-已完成 7-已关闭
+    返回值orderType新增订单类型: 4-代理分销订单 5-自营订单
+  51060512:
+    新增字段: supportReturn,catId,catName,supportDistribution,distributorCommissionRate
+    返回值isValid新增类型: -1-删除
+  51060515:
+    新增字段: waitSettleBalance
+  51060517:
+    新增字段: transactionDesc
+
+订单表:
+  订单类型新增: 4-代理分销订单 5-自营订单
+  新增字段:
+    是否结算
+    结算时间
+订单商品表:
+  新增字段:
+    是否支持退换货
+    分销商佣金比例
+    分销商佣金金额
+商品表:
+  商品类型新增: 3-代理分销商品 4-自营商品
+  新增字段:
+    分销商佣金比例
+    分销商佣金金额
+交易明细表:
+  交易类型新增: 4-佣金支出 5-佣金收入
+
+待结算余额满足以下2个条件的订单总额:
+  结算状态: 1-待结算  
+  订单状态: 2-待发货 3-已发货 4-确认收货【交易成功】 5-退款中 8-订单挂起
+
+
+kk-live-project:
+  disconf: 
+    #代理分销订单确认收货后结算间隔时间(单位秒)
+    order.settle.intervals=60
+
+订单列表: 
+  {"FuncTag":51060517,"orderNo":"1810271410253461","type":2,"state":4,"userId":10003834,"token":"A2A3A992F6D70549D9BAC8DA44FD3D2A03"}
+  {"FuncTag":51060517,"userId":10009620,"token":"A119AC95707CC142A3B9F76C6144F270BE","state":2,"type":1,"start":0,"num":20}
+
+添加商品: {"FuncTag":51060540,"userId":10003834,"token":"A1A42B911B3DD44CE189CB785B8345E787","productName":"酒店🏨大床房","catId":7,"productPrice":110,"stockNum":20,"expressPrice":10,"productBannerUrls":"http://ares.kktv8.com/kk/jiudian/jiudian_1.jpg,http://ares.kktv8.com/kk/jiudian/jiudian_2.jpg","supportReturn":1,"supportDistribution":1,"distributorCommissionRate":30,"productDetailDesc":"酒店🏨值得期待 性价比超高","productDetailUrls":"http://ares.kktv8.com/kk/jiudian/jiudian_3.jpg,http://ares.kktv8.com/kk/jiudian/jiudian_4.jpg"}
+
+提交订单: {"FuncTag":51060549,"sellerId":10003834,"productId":511,"count":10,"addressId":42,"orderChannel":1,"userId":10002534,"token":"A1884EEEB25122422EA1A22C15F3CA2FB2"}
+

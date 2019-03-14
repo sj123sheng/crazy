@@ -14,10 +14,14 @@ hosts文件配置机器名称映射: 127.0.0.1  localhost  guest4(机器名称�
 查找文件中包含的字符串: grep 51050606 catalina.out | grep 10002534
 查找压缩包中包含的字符串: zcat catalina.out.tar | grep 10002534
 
+查找/data/app目录下所有文件中包含kkcore-actor-api-*.jar字符串的文件并过滤_bak目录: 
+  find /data/app -name "kkcore-actor-api-*.jar" | grep -v '_bak' | grep --color "kkcore-actor-api"
+
 1、或操作:
   grep -E '123|abc' filename  // 找出文件（filename）中包含123或者包含abc的行
   egrep '123|abc' filename    // 用egrep同样可以实现
   awk '/123|abc/' filename   // awk 的实现方式
+  grep -E "jian.sheng" ~/Downloads/工作目录/* // 找出文件夹中包含jian.sheng的文件
 
 2、与操作:
   grep pattern1 files | grep pattern2 ：显示既匹配 pattern1 又匹配 pattern2 的行。
@@ -43,7 +47,7 @@ ironman.20160725-141231是原名，ironman是想要改的名字
 
 1、*.rpm形式的二进制软件包 
 安装：rpm -ivh *.rpm 
-卸载：rpm -e packgename 
+卸载：rpm -e packgename
 
 2、*.tar.gz/*.tgz、*.bz2形式的二进制软件包 
 安装：tar zxvf *.tar.gz 或 tar yxvf *.bz2 

@@ -1,0 +1,37 @@
+kk-liveshop-module:
+  disconf:
+    config.properties: 新增配置项
+      # 跨年活动开始时间
+      newYear.activity.startTime=1543893048000
+      # 跨年活动结束时间
+      newYear.activity.endTime=1546444799000
+      #跨年活动路径
+      newYear.activity.path=pages/miniactivity_buy/activity_2018/index
+      #跨年活动图标
+      newYear.activity.icon=http://ares.kktv8.com/kk/liveshop/activityentrance.png
+
+meShow:
+  涉及function:
+    ActorFunction
+    LiveshopFunciton
+    LiveShopActivityFunctions
+  disconf:
+    # 直播购家族id
+    liveshop.familyId=22137
+    #直播购活动栏目id
+    liveShopActivityCataIds={"specialRegionOne":1501,"specialRegionTwo":1506,"specialRegionThree":1511,"specialRegionFour":1516}
+    #直播购活动栏目显示时间
+    liveShopActivityCataShowTime={"time1":15,"time2":19}
+
+
+测试结束需要处理:
+  中奖商品运费: 统一更新成15元
+  kkgame:
+    activity_lottery_pool活动开始时间更新: '2018-12-26 09:00:00.000000'
+    kkgamecache: 
+      key: ACTIVITY_LOTTERY_CHANCE:20181225_LIVE_SHOP_NEW_YEAR_POOL 删除
+  kk-liveshop-module:
+    disconf: 
+      config.properties: 
+        # 跨年活动开始时间
+        newYear.activity.startTime=1545818400000

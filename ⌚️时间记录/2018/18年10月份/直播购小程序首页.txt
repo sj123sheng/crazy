@@ -1,0 +1,9 @@
+交互: smb://10.0.0.55/kktv/design/WEB/KK/5.6.2/交互/直播购小程序_首页_0930
+需求: https://shimo.im/docs/7mToaesv5gUnIA9v/
+
+涉及工程: 
+  管理后台: 
+    meShowAdmin配置banner新增一个位置类型: 8-直播购小程序首页
+  kk-wechatProject-module:
+    kk-wechatProject-server: jenkins直接发布
+  kk-hall-module: jenkins直接发布

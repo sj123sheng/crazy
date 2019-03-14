@@ -1,0 +1,16 @@
+meShow:
+  51060551
+
+
+hist_delivery:
+  新增字段:
+    ALTER TABLE tshow.hist_delivery ADD address_id int NULL;
+    COMMENT ON COLUMN tshow.hist_delivery.address_id IS '收货地址编号';
+  初始化数据:
+    update tshow.hist_delivery h set address_id = (select r.address_id
+                                       from tshow.res_user_address r where delivery_user_id = r.user_id and r.is_default_address = 1);
+
+
+kk-logistics-module:
+  applyDelivery:
+

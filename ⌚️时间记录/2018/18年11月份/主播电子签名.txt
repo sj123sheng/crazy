@@ -1,0 +1,7 @@
+kk-userSecurity-module:
+  disconf:
+    config.properties:
+      # 公司id
+      corpId=YJ_TUNWAR
+      # 服务机构代码
+      serviceOrgCode=YJ_TUNWAR

@@ -1,3 +1,13 @@
+连接线上跳板机命令: ssh jian.sheng@l.kktv8.com -p 61022 
+证书密码: DnAvW7mI74YaQJ9x
+连接线上redis集群命令: 
+  redis-cli -h 192.168.100.37 -p 7384 -a tshowsms
+  redis-cli -h 192.168.100.19 -p 7384 -a tshowsms
+密码认证: auth "rzxlszy"
+
+redis-cli -h redis4.kktv2.com -p 6385 -a tshowfw
+auth "tshowfw"
+
 
 首先select 加数字选择库
 

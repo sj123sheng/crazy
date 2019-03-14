@@ -14,3 +14,4 @@ jhat -J-Xmx1024M [file]
 
 eclipse Memory Analyzer
 Eclipse 提供的一个用于分析JVM 堆Dump文件的插件。借助这个插件可查看对象的内存占用状况，引用关系，分析内存泄露等
+

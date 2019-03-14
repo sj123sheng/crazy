@@ -1,0 +1,5 @@
+AppID(小程序ID): wx89a9199775afdd11
+AppSecret(小程序密钥): 10adf42e809e3819ed2d4b2d4b2f1366
+
+
+EncodingAESKey(消息加密密钥)随机生成: skH8ENE5eAiLAfONFeF9SYFoaVD29CMXWYUvbv1z8dI

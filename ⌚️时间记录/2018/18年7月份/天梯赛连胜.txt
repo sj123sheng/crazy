@@ -1,0 +1,4 @@
+INSERT INTO conf_info (config_key, config_value_web, update_time, valid, config_desc, config_value_app) VALUES ('pkvoice', '[{"downloadUrl":"http://ares.kktv8.com/kk/happyPK/pkvoice/winvoice.mp3"}]', '2018-08-02 09:48:25.151035', 1, '欢乐PK连胜音效资源', '[{"downloadUrl":"http://ares.kktv8.com/kk/happyPK/winvoice.zip"}]');
+
+INSERT INTO conf_info (config_key, config_value_web, update_time, valid, config_desc, config_value_app) VALUES ('pkanimation', '[{"pkdraw":"http://ares.kktv8.com/kk/happyPK/pkvoice/pkdraw.svga", "pkwin":"http://ares.kktv8.com/kk/happyPK/pkvoice/pkwin.svga"}]', '2018-08-02 09:48:25.151035', 1, '欢乐PK连胜动画资源', '[{"pkdraw":"http://ares.kktv8.com/kk/happyPK/pkvoice/pkdraw.svga", "pkwin":"http://ares.kktv8.com/kk/happyPK/pkvoice/pkwin.svga"}]');
+

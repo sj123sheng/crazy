@@ -1,0 +1,25 @@
+pg cx_family_info 解散家族没有删除记录 
+oracle family_info 解散家族删除了记录
+
+新增自增长主键:
+    family_applicant
+    hist_family_removal
+
+disconf:
+  添加公共配置: melotall
+
+涉及发布工程:
+  kk-family-server: 去掉disconf 公共配置oracle_tshow的连接
+  family-module-server-1.0.12: 线上进程关闭 代码删除 等待周星模块上线后关闭
+
+连接线上跳板机命令: ssh jian.sheng@l.kktv8.com -p 61022 
+证书密码: DnAvW7mI74YaQJ9x
+连接线上redis集群命令: 
+  redis-cli -h 192.168.100.37 -p 7384 -a tshowsms
+  redis-cli -h 192.168.100.19 -p 7384 -a tshowsms
+密码认证: auth "rzxlszy"
+
+redis-cli -h redis4.kktv2.com -p 6385 -a tshowfw
+auth "tshowfw"
+
+/family/manager

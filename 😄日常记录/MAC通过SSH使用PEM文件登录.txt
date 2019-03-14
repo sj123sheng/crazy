@@ -1,0 +1,25 @@
+1.命令如下:
+
+ssh -i key.pem 
+ssh -i key.pem root@IP
+如果出现报错说明这个问题是文件的权限太大了，需要给小点 
+
+sudo chmod 600 key.pem 
+　　
+然后再执行ssh -i key.pem root@IP
+
+2.可以使用ssh-add 添加key文件: ssh-add -k /Users/shengjian/Documents/jian.sheng.pem
+证书密码: 
+ni8xcu4Fqcl6RngI2rRQ
+3.正常登录堡垒机: ssh root@IP
+
+
+连接线上跳板机命令: ssh jian.sheng@l.kktv8.com -p 61022 
+证书密码: DnAvW7mI74YaQJ9x
+连接线上redis集群命令: 
+  redis-cli -h 192.168.100.37 -p 7384 -a tshowsms
+  redis-cli -h 192.168.100.19 -p 7384 -a tshowsms
+密码认证: auth "rzxlszy"
+
+redis-cli -h redis4.kktv2.com -p 6385 -a tshowfw
+auth "tshowfw"

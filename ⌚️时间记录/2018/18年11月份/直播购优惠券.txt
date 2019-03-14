@@ -1,0 +1,21 @@
+交互: smb://10.0.0.55/kktv/design/APP/KKTV/6.1.1/交互/
+需求: https://shimo.im/docs/ckJHO1y8L1YFHo8V
+
+接口:
+  51060549: 
+    新增入参: couponCode  String  选填  优惠券码
+  51060551: 
+    返回值新增: couponAmount  number  优惠券扣减金额
+  51060512:
+    返回值新增: supplier Json          供货商信息
+                              userId  number  供货商id
+                              gender  number  供货商性别
+                              nickname  string  nickname
+                              sellingProductNum number  在售商品数量
+                              portrait  string  头像
+
+sql:
+  商家申请入驻表新增2个字段: 省市编码字段
+
+管理后台:
+  订单列表: 实付金额修改

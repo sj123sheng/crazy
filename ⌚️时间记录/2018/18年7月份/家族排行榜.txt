@@ -1,0 +1,39 @@
+kkcx:
+  family_info
+  family_member
+tshow: 
+  res_room_info
+melotlog:
+  gift_history
+melotroom:
+  hist_actor_live
+appstable:
+  user_resource_info
+
+
+disconf:
+  公共配置数据:
+    melotall: 新增
+    oracle_tshow: 删除
+
+热门家族列表: Zrevrange 'familyStats.weeklyConsume' 0 10 WITHSCORES
+家族消费榜: Zrevrange 'familyStats.consumeTotal.new' 0 10 WITHSCORES
+超冠主播榜: Zrevrange 'familyStats.crownCount' 0 10 WITHSCORES
+勋章成员榜: Zrevrange 'familyStats.medalCount' 0 10 WITHSCORES
+
+家族明星榜-日榜: Zrevrange 'familyRank_new_0_0_10520' 0 10 WITHSCORES
+家族富豪榜-日榜: Zrevrange 'familyRank_new_1_0_10520' 0 10 WITHSCORES
+家族明星榜-总榜: Zrevrange 'familyRank_new_0_3_19612' 0 10 WITHSCORES
+家族富豪榜-总榜: Zrevrange 'familyRank_new_1_3_19612' 0 10 WITHSCORES
+
+优化sql: 
+  删除关联的family_member表 res_room_info表中查询family_id关联
+  select
+      gh.touserid    as userId,
+      sum(gh.amount) as amount
+  from melotlog.gift_history gh
+      join tshow.res_room_info ai on ai.actorid = gh.touserid and ai.family_id = #{familyId}
+  where gh.dtime >= #{beginTime, jdbcType=DATE}
+  group by gh.touserid
+  order by sum(gh.amount) DESC
+  limit 11

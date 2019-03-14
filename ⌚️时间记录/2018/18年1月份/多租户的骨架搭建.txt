@@ -1,25 +1,18 @@
-选中: kk-module-quickstart-archetype
-新增package属性: 输入com.mleot.kk.XX
-
-通过修改配置文件的方法来实现删除: ~/Library/Caches/IntelliJIdea2016.2/Maven/Indices/UserArchetypes.xml
-
-生成骨架命令: mvn archetype:create-from-project
-
 上传api jar包: 
   必须把pom.xml里面的parent标签删除
-
-生成骨架命令: mvn archetype:create-from-project
 
 骨架maven配置:
 
   <archetype>
     <groupId>com.melot.module</groupId>
     <artifactId>kk-module-quickstart-archetype</artifactId>
-    <version>3.5.0</version>
+    <version>3.6.0</version>
     <repository>
       http://maven.kktv2.com:8081/nexus/content/repositories/releases
     </repository>
   </archetype>
+
+生成骨架命令: mvn archetype:create-from-project
 
 自动生成单表增删改查功能: 
   表自增长主键: 

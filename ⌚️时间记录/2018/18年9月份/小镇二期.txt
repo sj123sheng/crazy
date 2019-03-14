@@ -1,0 +1,22 @@
+发送微信评论消息:
+  kk-town-project:
+    disconf:
+        applicationConfig.properties: 新增
+          melot.elasticJob.simpleJob[1].cron=0 0/10 * * * ?
+          melot.elasticJob.simpleJob[1].jobName=commentNoticeJob
+          melot.elasticJob.simpleJob[1].refJobName=commentNoticeJob
+          melot.elasticJob.simpleJob[1].email=jian.sheng@melot.cn
+          melot.elasticJob.simpleJob[1].host=10.0.*.*
+          melot.elasticJob.simpleJob[1].tenantIds=0
+        config.properties: 新增
+          # 微信小程序appId和appSecret配置
+          wechat.project.appId=wx473679090b681729
+          wechat.project.appSecret=75dceeea4aca66a3f2132b70ee8ea692
+
+          # 作品的作者收到评论的通知消息参数
+          comment.notice.params={"template_id":"EqR0ngied5wzvnirghKKBlEPDxBut_4zFY_NDOXip0M","page":"/pages/production/production","data":{"keyword1":{"value":""},"keyword2":{"value":""},"keyword3":{"value":""}}}
+
+现在访问的话只需要修改hosts文件中www.kktv5.com 对应的ip地址为10.0.3.173即可
+
+发送微信小程序消息:
+  上传openId: https://apitest.bangzb.com/meShow/entrance?parameter={%22FuncTag%22:51120304,%22userId%22:%2210002462%22,%22token%22:%22A17458E477BF94493DA2DE8ADD54594BFB%22,%22appType%22:%222%22,%22openId%22:%22o5M-05LTA61smA-9MPPprwn9oMps%22}

@@ -1,0 +1,19 @@
+一期:
+一期:
+  \\10.0.0.55\kktv\design\APP\KKTV\5.8.2\交互\直播购-0404
+
+二期:
+  \\10.0.0.55\kktv\design\APP\KKTV\5.8.3\交互\汉今国际-0416
+  \\10.0.0.55\kktv\design\APP\KKTV\5.8.6\交互\直播购2期-0518
+
+三期:
+  \\10.0.0.55\kktv\design\APP\KKTV\5.9.2
+  https://shimo.im/docs/291OEs0jeoct35Y0/
+
+四期:
+  smb://10.0.0.55/kktv/design/APP/KKTV/6.0.1/交互/直播购四期-0903
+  https://shimo.im/docs/FZ8yt6sjN9gFnGms/
+  后台需求: https://shimo.im/docs/KRd4l3yHWb4ThwBG/
+
+#默认的商家ID
+liveShop.defaultShopActorId=139299931

@@ -1,0 +1,6 @@
+sql调整:
+  ALTER TABLE kkcx.cx_family_info ADD recommend_point int DEFAULT 0 NULL;
+  COMMENT ON COLUMN kkcx.cx_family_info.recommend_point IS '推荐点数';
+
+disconf:
+  新增2个定时任务

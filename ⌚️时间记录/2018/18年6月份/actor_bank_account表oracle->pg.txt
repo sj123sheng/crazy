@@ -4,4 +4,5 @@
   family_bank_account_private
 
 家族模块改造:
-  family_member
+  kk-family-server:
+    新增service(family_member表)

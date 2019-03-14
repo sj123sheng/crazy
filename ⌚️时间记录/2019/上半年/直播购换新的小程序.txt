@@ -1,0 +1,43 @@
+disconf:  都是更新配置
+  meShow: 灰度服和正式服都需要更新
+    #微信小程序appId定义
+    wechatProjectAppIds={"1":"wx948978509113b605","2":"wx473679090b681729","3":"wx00e4645d5d846bee"}
+  kk-liveshop-module:
+    #直播购小程序appId和appSecret配置
+    liveshopProjectAppIdConfig={"appId":"wx00e4645d5d846bee","appSecret":"ffbd59635e3bbc9602908edf282907c9"}
+    #商家发货发送微信消息
+    wechatMessageAfterDelivery={"template_id":"PceQh9_xdij8ONPK0zPDksOsdz0UKJ8B2bkv56D4Qs0","data":{"keyword1":{"value":""},"keyword2":{"value":""},"keyword3":{"value":""},"keyword4":{"value":""},"keyword5":{"value":""},"keyword6":{"value":""},"keyword7":{"value":"商家已发货"}}}
+    #后台取消订单后发送的微信消息
+    wechatMessageAfterAdminRefund={"template_id":"AUo95XjC35o5q1yOP7m5pQNIIVw0bRh_RuPZ9KnlzYw","data":{"keyword1":{"value":""},"keyword2":{"value":""},"keyword3":{"value":""},"keyword4":{"value":"%s元"},"keyword5":{"value":""},"keyword6":{"value":""},"keyword7":{"value":"无"}}}
+    #跨年活动中奖消息
+    newYear.activity.lotteryMessage={"template_id":"AqwMNrbeuPJAGt4me4hLXoNAzqgAcLgZkJu0VD-ZIfI","data":{"keyword1":{"value":""},"keyword2":{"value":""},"keyword3":{"value":""},"keyword4":{"value":""},"keyword5":{"value":""}}}
+    #跨年活动获得分享抽奖次数模板消息
+    newYear.activity.lotteryChanceMessage={"template_id":"w36Q0L9CojJrPV3UqUPRFMT8qFtQxajGVwCOnDpqRu0","page":"pages/miniactivity_buy/activity_2018/index","data":{"keyword1":{"value":"实时到账"},"keyword2":{"value":"%s通过分享抽奖一次"},"keyword3":{"value":"剩余%s次抽奖机会"},"keyword4":{"value":"【点击马上参与,iphoneXS带回家!】"}}}
+    #商家入驻审核通过模板消息
+    sellerApplyPassMessage={"template_id":"fWqoLzMaipOKttq1odhfLMeRWtnQ4lC_RBnXp7rbUZo","page":"pages/salerJoin/index","data":{"keyword1":{"value":"您的商家入驻申请已经通过"},"keyword2":{"value":""},"keyword3":{"value":""},"keyword4":{"value":"请下载“KK直播”APP,使用微信登录,进行最后一步的主播认证吧"}}}
+    #商家入驻审核未通过模板消息
+    sellerApplyUnPassMessage={"template_id":"X0SiAQEbVsgNre8LSWq4YRhtqDJn7HguvbngQ5K5mjY","page":"pages/salerJoin/index","data":{"keyword1":{"value":"您的商家入驻申请未通过"},"keyword2":{"value":""},"keyword3":{"value":""},"keyword4":{"value":"点击消息,修改商家入驻信息重新提交即可"}}}
+  kk-liveshop-project:
+    #直播购小程序appId和appSecret配置
+    liveshopProjectAppIdConfig={"appId":"wx00e4645d5d846bee","appSecret":"ffbd59635e3bbc9602908edf282907c9"}
+    #直播购小程序订单截止前消息提醒
+    orderExpiredRemindMessageForProject={"template_id":"5-alRWhmBP22KEDJxIOCYt1P-wf3ehKHiQSK9BnIrMs","data":{"keyword1":{"value":""},"keyword2":{"value":""},"keyword3":{"value":""},"keyword3":{"value":"%s元"},"keyword4":{"value":""},"keyword5":{"value":"%s向你发起价值%s元的%s订单还有%s小时即将过期,请尽快支付!"}}}
+  kk-wechatProject-project:
+    #直播购小程序开播通知的appId和appSecret
+    liveshopNoticeLiveConfig={"appId":"wx00e4645d5d846bee","appSecret":"ffbd59635e3bbc9602908edf282907c9"}
+    #直播购小程序开播通知消息参数
+    liveshopNoticeLiveMessage={"template_id":"dI_dDimnncfD3FJMq_AZryKtrhc7mWoig5t1NXU8Xok","page":"pages/room/room?id=","data":{"keyword1":{"value":"您预约的直播即将开始"},"keyword2":{"value":""},"keyword3":{"value":""},"keyword4":{"value":"您订阅的%s直播已经开始,点击立即进入直播间!"}}}
+
+kk-liveshop-module: jenkins发布
+kk-wechatProject-server: jenkins发布
+kk-wechatProject-project: jenkins发布
+
+
+自动确认收货:
+  disconf:
+    kk-liveshop-project:
+      #过年期间自动确认收货配置
+      autoReceive.date=10
+      special.autoReceive.date=25
+      autoReceive.startTime=1548604800000
+      autoReceive.endTime=1550073599000

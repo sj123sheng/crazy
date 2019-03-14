@@ -1,0 +1,31 @@
+需求文档:
+  一期: https://shimo.im/docs/1cSO9LsdbpU0R1rI
+  二期: https://shimo.im/docs/wy9ZB2PGiW4L9FgO
+
+删除作品和话题:
+  作品或话题被置顶或设置为banner过就不允许删除
+
+发布作品:
+  发布图片作品: https://apitest.bangzb.com/meShow/entrance?parameter={"FuncTag":511201104,"token":"A1CB2F58142B3243BF9278EB89B380C2D0","userId":10002370,"areaCode":"361128112","workUrl":"http://ares.kktv8.com/kktv/town/20180829/11/7539649_4412646.jpg,http://ares.kktv8.com/kktv/town/20180829/11/7539649_4412643.jpg,http://ares.kktv8.com/kktv/town/20180829/11/7539649_4412338.jpg,http://ares.kktv8.com/kktv/town/20180829/11/7539649_4412643.jpg,http://ares.kktv8.com/kktv/town/20180829/11/7539649_4412338.jpg","workType":1,"workDesc":"婺源好地方"}
+
+  发布视频作品: https://apitest.bangzb.com/meShow/entrance?parameter={%22FuncTag%22:51120104,%22token%22:%22A16625B57D52CB4402831648C9DF8622A0%22,%22userId%22:10002370,%22areaCode%22:%22361128112%22,%22workUrl%22:%22http://kkshare.kktv1.com/10010744_4097_1533033541197.mp4%22,%22workType%22:2,%22topicName%22:%22%E9%86%89%E7%BE%8E%E4%B9%A1%E9%95%87%22,%22workDesc%22:%22%E5%A9%BA%E6%BA%90%E9%84%B1%E9%98%B3%E9%83%BD%E6%98%AF%E5%A5%BD%E5%9C%B0%E6%96%B9%E5%95%8A%22,%22mediaDur%22:20}
+
+作品审核:
+  测试服登陆: http://10.0.0.7:9494/inspectorAPI/login.action?username=xianbin.zhang&password=123456
+  测试服审核: http://10.0.0.7:9494/inspectorAPI/picture/inspectorPictureList.action?dayirl=15&dayirl2=0&count=32&from=0&history=&mediaType=14
+
+  beta服登陆: http://10.0.13.29:9595/inspectorAPI/login.action?username=xianbin.zhang&password=123456
+  beta服审核: http://10.0.13.29:9595/inspectorAPI/picture/inspectorPictureList.action?dayirl=15&dayirl2=0&count=32&from=0&mediaType=15
+
+  灰度登陆: http://bk.kktv8.com:8385/inspectorAPI/login.action?username=ylqiao&password=qiaoyl@kk
+  灰度登陆: http://bk.kktv8.com:8385/inspectorAPI/picture/inspectorPictureList.action?dayirl=15&dayirl2=0&count=32&from=0&mediaType=14&history=
+
+sql数据初始化: conf_area_code表
+
+涉及工程: 
+  kk-location-module
+  kk-town-module
+  kk-town-project
+
+kk-resource-module:
+  disconf: 新增 "resType_14":"town"

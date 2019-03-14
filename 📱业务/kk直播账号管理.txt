@@ -77,7 +77,7 @@ beta服务器:
 
 3. 运营后台:
   地址: http://10.0.0.7:9494/operator
-  账号1: he.wang 123456
+  账号1: youyi.wang 12345678Aa 123456Aa
 
 4. 巡管后台:
   地址: http://10.0.0.7:9494/kkopp
@@ -87,6 +87,7 @@ beta服务器:
   地址: http://10.0.0.7:9494/meShowAdmin
   账号1: duanduan.lin 123456
   账号2: jian.sheng 123456
+  账号3: youyi.wang 123ABCabc
 
 6. 代理商后台:
   地址: http://10.0.0.7:9595/agency/index.jsp

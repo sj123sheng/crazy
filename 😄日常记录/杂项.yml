@@ -20,12 +20,16 @@ qq密码: SJ123SHENGJIAN
 
 房贷: 工商银行杭州开元支行 吴国英 电话：13588088919
 
-连接线上跳板机命令: ssh jian.sheng@l.kktv8.com -p 61022
+sql解析计划: explain analyse
+
+测试服cat启动命令: cd /data/app/melot-cat/bin && ./start.sh restart
 
 oh-my-zsh的安装:
   yum install zsh -y
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 重装oh-my-zsh: 需要先rm -rf 删除zsh和oh-my-zsh文件夹
+
+java_home: export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home
 
 互联网个人信用信息服务平台认证码: 您已通过银行卡身份验证，认证码是：aqqjd6 ，请到互联网个人信用信息服务平台填写认证码。
 
@@ -35,14 +39,15 @@ oh-my-zsh的安装:
   root@localhost: W6Wtio6Rtp-k
   root: root123
 
+家族、心愿模块线上服务器: 88，97
+小程序线上服务器: 115
+
 生成骨架命令: mvn archetype:create-from-project
+
+启动swagger-UI: /data/java/jdk1.8.0_161/bin/java -jar springBootDemo-1.0.0.jar > catalina.out &
 
 深圳社保卡电脑号: 636270873
 
 房间cdn缓存刷新: 
   测试服:  http://10.0.3.24:82/CDN/refresh/?I=20010302
   beta服:  http://10.0.13.22/CDN/refresh/?I=20010302
-
-大厅栏目(抓娃娃栏目id：3739)下的房间列表:
-  测试服:  http://10.0.3.24:82/CDN/output/M/1/I/20010302/P/a-1_c-108_cataId-3739_start-0_offset-40_platform-2_v-106/json.js
-  beta服:  http://10.0.13.22/CDN/output/M/1/I/20010302/P/a-1_c-108_cataId-1210_start-0_offset-40_platform-2_v-106/json.js

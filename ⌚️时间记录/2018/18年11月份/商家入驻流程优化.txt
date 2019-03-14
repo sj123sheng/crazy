@@ -1,0 +1,8 @@
+meShow:
+  disconf:
+    autoConfig.properties:
+      # 直播购家族id
+      liveshop.familyId=22137
+
+ALTER TABLE kkcx.res_shop_info ADD manager_id int NULL;
+COMMENT ON COLUMN kkcx.res_shop_info.manager_id IS '商家经理ID';
