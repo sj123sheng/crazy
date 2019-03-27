@@ -5,8 +5,8 @@
   redis-cli -h 192.168.100.19 -p 7384 -a tshowsms
 密码认证: auth "rzxlszy"
 
-redis-cli -h redis4.kktv2.com -p 6385 -a tshowfw
-auth "tshowfw"
+家族模块缓存: redis-cli -h redis4.kktv2.com -p 6385 -a tshowfw
+密码认证: auth "tshowfw"
 
 
 首先select 加数字选择库

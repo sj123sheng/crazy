@@ -3,4 +3,8 @@ sql调整:
   COMMENT ON COLUMN kkcx.cx_family_info.recommend_point IS '推荐点数';
 
 disconf:
-  新增2个定时任务
+  新增2个定时任务:
+    1.月底清零推荐点数
+    2.家族收益获取推荐点数
+    3.优质主播获取推荐点数
+    4.优质新主播获取推荐点数

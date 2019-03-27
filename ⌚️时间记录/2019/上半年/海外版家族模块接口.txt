@@ -29,9 +29,19 @@ meShowAdmin:
   51020304
   20010501
 
-kk-family-server:
-  disconf:
+涉及工程:
+  meshow:
+  kk-family-server:
+  kk-abroad-levelup-project:
+  kk-abroad-signedtalent-module:
+  family-module-server: 下架
 
-kk-family-project:
-  disconf:
-    
+disconf:
+  kk-family-server:
+    #discovery栏目id
+    discoveryCateId=1280
+    newStarSideLabelIcon=http://rescdn.kktv9.com/kktv/sideLabel/newstar.png
+    newStarValidDays=30
+
+
+中心库需要同步的表: kkcx.family_applicant a, public.base_user_info u, kkcx.family_info
