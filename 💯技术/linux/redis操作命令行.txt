@@ -8,6 +8,7 @@
 家族模块缓存: redis-cli -h redis4.kktv2.com -p 6385 -a tshowfw
 密码认证: auth "tshowfw"
 
+查看端口被占用情况: netstat -plnt | grep 9090
 
 首先select 加数字选择库
 
