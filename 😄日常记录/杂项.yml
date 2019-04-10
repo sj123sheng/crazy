@@ -41,6 +41,7 @@ java_home: export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Co
 
 家族、心愿模块线上服务器: 88，97
 小程序线上服务器: 115
+清除主播权限线上服务器: 131
 
 生成骨架命令: mvn archetype:create-from-project
 

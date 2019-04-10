@@ -1,0 +1,13 @@
+kk-liveshop-server:
+  disconf: 
+    config.properties:  新增2个配置项
+      #特殊订单过期时间(单位: 秒)
+      liveShop.specialExpirySeconds=120
+
+      #特殊商家id列表(多个商家逗号隔开)
+      liveShop.specialMerchantList=143040876
+
+kk-liveshop-project:
+  disconf: 
+    applicationConfig.properties: 更新一个配置项
+      melot.elasticJob.simpleJob[1].cron=0 */1 * * * ?

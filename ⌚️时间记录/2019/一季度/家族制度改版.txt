@@ -1,15 +1,43 @@
 涉及工程:
+  meShow:
+    50001019: 加入黑名单过滤，不在黑名单中的可以开播(node需要加入判断限制)
   kk-family-server:
-    自由主播开播: (node需要加入判断限制)
-      50001019: 加入黑名单过滤，不在黑名单中的可以开播
     转会:
       自由主播转成家族主播:
         自由主播黑名单权限去除
   kk-family-project:
     解散家族:
       点击冻结后家族主播立即转为自由主播，90天后家族冻结
+  kk-userSecurity-server:
+    新增自由主播开播黑名单接口:
 
 
-涉及sql:
-  上线前3天关闭转会功能，把所有申请中的转会记录拒绝掉
-  上线时把所有申请中的转会记录拒绝掉
+涉及事项:
+  上线前: 关闭转会功能，把所有申请中的转会记录拒绝掉
+  上线时: 
+    把所有申请中的转会记录拒绝掉
+    把自由主播都加入开播黑名单中
+
+sql:
+-- 官方主播开播黑名单
+create table tshow.offical_actor_blacklist
+(
+  actor_id int
+    constraint offical_actor_blacklist_pk
+    primary key,
+  operator_id int,
+  join_time timestamp
+);
+
+comment on table tshow.offical_actor_blacklist is '官方主播开播黑名单';
+
+comment on column tshow.offical_actor_blacklist.actor_id is '主播id';
+
+comment on column tshow.offical_actor_blacklist.operator_id is '操作人id';
+
+comment on column tshow.offical_actor_blacklist.join_time is '加入时间';
+
+-- 数据初始化
+insert into tshow.offical_actor_blacklist
+(actor_id, operator_id, join_time
+) select actorid, 0, now() from tshow.res_room_info where family_id = '11222';
