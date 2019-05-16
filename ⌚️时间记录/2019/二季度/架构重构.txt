@@ -1,0 +1,51 @@
+1: springboot升级到2.x版本
+<springboot.version>2.1.4.RELEASE</springboot.version>
+<melot.common.version>2.1.0</melot.common.version>
+2: jdk升级到1.8及以上版本
+3: 程序OOM后kill进程的参数配置
+# JVM参数配置 程序发生OOM的时候kill掉进程 通过保活机制重启程序
+JAVA_PARAMS="$JAVA_PARAMS -XX:OnOutOfMemoryError='kill -9 %p'"
+4: kkrpc端口配置从disconf改为bin/env.properties里面指定端口配置
+# kkrpc服务端指定端口配置
+JAVA_PARAMS="$JAVA_PARAMS -Dmelot.kkrpc.providerConfig.port=30015"
+5: 配置中心disconf: 迁移至apollo
+6: kkrpc公共配置: 提取到apollo
+7: 升级springboot后直接修改log4j2.xml的日志级别 不用重启1分钟内生效
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+数据库公共配置代码调整:
+  DatasourceConfiguration: getDataSourceMap
+    //如果有资源抉择配置,则根据配置生成，无则全部加载,以兼容老版
+    if (mybatisSourceNames != null && mybatisSourceNames.size() > 0) {
+      for (Entry<String, DataSource> temp : dsMap.entrySet()) {
+        if (mybatisSourceNames.contains(temp.getKey())) {
+          ret.put(temp.getKey(), temp.getValue());
+        }
+      }
+    } else {
+      ret.putAll(dsMap);
+    }
+    这段代码提取到multiTenants前面
+  SpringBootConfiguration: setMybatisSourceNames
+  MybatisAutoConfiguration: registerMybatis
+  DruidDataSource: getConnectionDirect testConnectionInternal

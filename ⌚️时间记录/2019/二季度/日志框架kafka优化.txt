@@ -1,0 +1,2 @@
+ip配置改为域名配置: bootstrapServers="kafka1.kktv2.com:9092,kafka2.kktv2.com:9092,kafka3.kktv2.com:9092"
+判断是否发送到kafka的标识符: 从#改成#kafka#

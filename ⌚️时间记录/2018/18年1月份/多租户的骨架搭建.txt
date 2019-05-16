@@ -6,7 +6,7 @@
   <archetype>
     <groupId>com.melot.module</groupId>
     <artifactId>kk-module-quickstart-archetype</artifactId>
-    <version>3.6.0</version>
+    <version>3.7.0</version>
     <repository>
       http://maven.kktv2.com:8081/nexus/content/repositories/releases
     </repository>

@@ -1,0 +1,12 @@
+统计当前postgresql相关进程数，在大体上可以估算数据库的连接数，非精准，但是目前最常用的
+ps -ef |grep postgres |wc -l
+
+包含本窗口的所有数据库连接数
+SELECT count(*) FROM pg_stat_activity;
+
+不包含本窗口的所有数据库连接数，其中pg_backend_pid()函数的意思是当前进程相关的后台进程ID
+SELECT count(*) FROM pg_stat_activity WHERE NOT pid=pg_backend_pid();
+
+连接pgbouncer的命令:
+  su - postgres
+  psql -U pgbouncer -p 6531

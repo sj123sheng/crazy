@@ -6,16 +6,18 @@
   <archetype>
     <groupId>com.melot.module</groupId>
     <artifactId>kk-module-quickstart-archetype</artifactId>
-    <version>3.6.0</version>
+    <version>4.0.0</version>
     <repository>
       http://maven.kktv2.com:8081/nexus/content/repositories/releases
     </repository>
   </archetype>
 
-生成骨架命令: mvn archetype:create-from-project
+生成骨架命令: mvn archetype:create-from-project -DpackageName=com.melot.kk.test
+通过骨架创建工程命令: /Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/bin/java -Dmaven.multiModuleProjectDirectory=/private/var/folders/4z/fxkmch8j4z1b6bnndcw51pp40000gn/T/archetypetmp -Dmaven.home=/Users/shengjian/Documents/apache-maven-3.3.9 -Dclassworlds.conf=/Users/shengjian/Documents/apache-maven-3.3.9/bin/m2.conf -Dfile.encoding=UTF-8 -classpath /Users/shengjian/Documents/apache-maven-3.3.9/boot/plexus-classworlds-2.5.2.jar org.codehaus.classworlds.Launcher -Didea.version=2018.1.8 -s /Users/shengjian/Documents/apache-maven-3.3.9/conf/settings.xml -DskipTests=true -DinteractiveMode=false -DgroupId=com.melot.kk -DartifactId=test -Dversion=1.0.0 -DarchetypeGroupId=com.melot.module -DarchetypeArtifactId=kk-module-quickstart-archetype -DarchetypeVersion=4.0.0 -DarchetypeRepository=http://maven.kktv2.com:8081/nexus/content/repositories/releases -Dpackage=com.melot.kk.test org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate
 
-自动生成单表增删改查功能: 
-  表自增长主键: 
+
+自动生成单表增删改查功能:
+  表自增长主键:
     insert标签加入:
     <selectKey keyProperty="histLiveRoomAuditId" order="BEFORE" resultType="java.lang.Integer">
       select nextval('hist_live_room_audit_hist_live_room_audit_id_seq'::regclass)

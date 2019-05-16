@@ -2,6 +2,8 @@ control+R: 输入关键字查找最近输入的命令
 
 账户切换至root: sudo su - (不用密码的)
 
+解压zip包: unzip -o -d apollo-configservice apollo-configservice-1.4.0-github.zip
+
 查看进程内存情况: sudo jmap -histo 4704 > jmap.txt
 频繁gc的时候，使用这个命令查看进程内存情况，如果连续查看3次发现某个com.sxc的对象大量留存在内存中，很有可能就是这个对象造成的内存泄漏。 4704为进程id（pid）
 

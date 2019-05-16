@@ -10,6 +10,29 @@
 
 查看端口被占用情况: netstat -plnt | grep 9090
 
+连接pgbouncer命令: 登陆postgresql安装数据库服务器 执行su - postgres 再执行psql -U pgbouncer -p 6531
+查看pgbouncer客户端连接情况: show clients; show pools;
+切换数据库: \c kkcx kkcx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 首先select 加数字选择库
 
 type + key的名字查看key的类型
