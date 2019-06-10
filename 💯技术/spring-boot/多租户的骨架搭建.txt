@@ -20,5 +20,5 @@
   表自增长主键:
     insert标签加入:
     <selectKey keyProperty="histLiveRoomAuditId" order="BEFORE" resultType="java.lang.Integer">
-      select nextval('hist_live_room_audit_hist_live_room_audit_id_seq'::regclass)
+      select nextval('hist_live_room_audit_hist_live_room_audit_id_seq')
     </selectKey>

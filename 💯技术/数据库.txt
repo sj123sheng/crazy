@@ -10,3 +10,10 @@ SELECT count(*) FROM pg_stat_activity WHERE NOT pid=pg_backend_pid();
 连接pgbouncer的命令:
   su - postgres
   psql -U pgbouncer -p 6531
+
+自动生成单表增删改查功能:
+  表自增长主键:
+    insert标签加入:
+    <selectKey keyProperty="histLiveRoomAuditId" order="BEFORE" resultType="java.lang.Integer">
+      select nextval('hist_live_room_audit_hist_live_room_audit_id_seq')
+    </selectKey>

@@ -9,4 +9,4 @@ apollo部署:
   export JAVA_HOME=/data/java/jdk1.8.0_161/
   export JAVA_OPTS="-Xms128m -Xmx256m -Xss256k -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m -XX:NewSize=128m -XX:MaxNewSize=128m -XX:SurvivorRatio=8"
 
-
+超级管理员账号/密码: apollo/melot@2019

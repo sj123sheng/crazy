@@ -35,8 +35,6 @@ oh-my-zsh的安装:
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 重装oh-my-zsh: 需要先rm -rf 删除zsh和oh-my-zsh文件夹
 
-java_home: export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home
-
 互联网个人信用信息服务平台认证码: 您已通过银行卡身份验证，认证码是：aqqjd6 ，请到互联网个人信用信息服务平台填写认证码。
 
 分页问题处理: 查询条件里面的排序字段必须唯一
@@ -48,17 +46,14 @@ java_home: export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Co
   root@localhost: W6Wtio6Rtp-k
   root: root123
 
-家族、心愿模块线上服务器: 88，97
-用户安全模块线上服务器: 114
-小程序线上服务器: 115
-清除主播权限线上服务器: 131
-小镇小程序服务器: 124
-
 生成骨架命令: mvn archetype:create-from-project
 
 启动swagger-UI: /data/java/jdk1.8.0_161/bin/java -jar springBootDemo-1.0.0.jar > catalina.out &
 
 深圳社保卡电脑号: 636270873
+
+测试服域名: https://apitest.bangzb.com/meShow
+beta服域名: https://apitest.bangzb.com/betameShow
 
 房间cdn缓存刷新: 
   测试服:  http://10.0.3.24:82/CDN/refresh/?I=20010302
